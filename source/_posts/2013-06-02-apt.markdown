@@ -1,8 +1,48 @@
 ---
 layout: post
-title: "Advanced Package Tool"
-subtitle: "Few commands related to how to install and remove packages in Ubuntu from terminal"
-date: 2013-06-20 00:31
+title: "Advanced Packaging Tool"
+date: 2013-06-02 00:31
 comments: true
 categories: 
 ---
+*Advanced Packaging Tool is a user interface that lets the user install and remove packages/softwares on Debian/GNU Linux Distributions.*
+
+##Searching for Packages##
+To search for a software/package in the repositories run the following command in the terminal
+	
+	apt-cache search <search-term>|less
+	
+less is used for a better navigation through the output list
+
+##Adding Repositories##
+To add the repository run the following command
+	sudo add-apt-repository <repository name>
+Manually the repositories can be added or changed by editing APTs source file
+	sudo vi /etc/apt/sources.list
+
+##Updating Sources##
+After adding repositories, the Package List has to be updated
+	sudo apt-get update
+This will update the package list from all repositories in one go.
+Remember to do this after every added repository
+
+##Installation##
+Now that you have added the software repository and updated your package list, and found the package name you need, you can install it by running the following command
+	sudo apt-get install <Package Names>
+This will download and install all of the packages mentioned.If there are dependencies-other prerequisite packages-they will also be installed
+
+##Removing Packages##
+To get rid of a program run the following command
+	sudo apt-get remove <Package Name>
+To get rid of the configuration files and associated directories as well
+	sudo apt-get --purge remove <Package Name>
+
+##Checking What is Installed##
+A list of all the installed packages can be seen by
+	sudo dpkg --list
+To search through the list use the grep command
+	sudo dpkg --list|grep <search term>
+If you want to know whether the particular package has been installed or not
+	dpkg -s <Package Name>
+
+
