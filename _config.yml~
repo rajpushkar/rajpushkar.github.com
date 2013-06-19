@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://rajpushkar.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Pushkar Raj's Blog
+subtitle: 
+author: Mehandiratta
 simple_search: http://google.com/search
 description:
 
@@ -54,9 +54,9 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
-# blog_index_asides:
-# post_asides:
-# page_asides:
+  blog_index_asides: [asides/twitter.html]
+  post_asides: [asides/pinboard.html]
+# page_asides: [asides/github.html]
 
 # ----------------------- #
 #   3rd Party Settings    #
