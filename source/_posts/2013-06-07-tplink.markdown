@@ -1,0 +1,40 @@
+---
+layout: post
+title: "TP-Link TL-WR702N Router Configuration Settings"
+date: 2013-06-07 16:26
+comments: true
+categories: 
+---
+There are five modes in which the router can be configured:
+<ol>
+<li>Wireless Access-Point(AP) Mode
+<li>Client Mode
+<li>Repeater Mode
+<li>Router Mode
+<li>Bridge Mode
+</ol>
+
+
+<strong><em>Wireless Access Point(AP) Mode:</em></strong>
+<dd>The router is connected to a wired network and transforms the wired internet access into wireless so that multiple devices can share the internet.</dd>
+
+<br>
+
+<strong><em>Client Mode:</em></strong>
+<dd>The device is connected to another device via ethernet card and acts as an adapter to send/receive the wireless signal from your wireless network</dd>
+
+<br>
+
+<strong><em>Repeater Mode:</em></strong>
+<dd>The device copies and reinforces the existing wireless signal to extend the coverage of the signal. So the network name(SSID) and password don't change. This mode is especially useful for a large space to eliminate signal-blind corners.</dd>
+
+<br>
+
+
+<strong><em>Router Mode:</em></strong>
+<dd>The device is connected to a DSL or cable modem and works as a Regular Wireless Router</dd>
+
+<br>
+
+<strong><em>Bridge Mode:</em></strong>
+<dd>The device borrows existing wireless internet and broadcasts it using a different network name(SSID) and password</dd>

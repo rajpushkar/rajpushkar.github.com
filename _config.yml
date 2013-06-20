@@ -4,7 +4,7 @@
 
 url: http://rajpushkar.github.io
 title: Pushkar Raj's Blog
-subtitle: 
+subtitle: Tech Adda
 author: Mehandiratta
 simple_search: http://google.com/search
 description:
@@ -55,7 +55,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
 # blog_index_asides: [asides/twitter.html]
-# post_asides: [asides/pinboard.html]
+post_asides: [custom/asides/about.html]
 # page_asides: [asides/github.html]
 
 # ----------------------- #
