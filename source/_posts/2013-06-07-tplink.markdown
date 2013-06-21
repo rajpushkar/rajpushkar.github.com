@@ -18,15 +18,21 @@ There are five modes in which the router can be configured:
 <strong><em>Wireless Access Point(AP) Mode:</em></strong>
 <dd>The router is connected to a wired network and transforms the wired internet access into wireless so that multiple devices can share the internet.</dd>
 
+{% img /images/apmode.jpeg 400 400 AP-Mode "Image Describing the AP Mode" %}
+
 <br>
 
 <strong><em>Client Mode:</em></strong>
 <dd>The device is connected to another device via ethernet card and acts as an adapter to send/receive the wireless signal from your wireless network</dd>
 
+{% img /images/client.jpeg 400 400 Client-Mode "Image Describing the Client Mode" %}
+
 <br>
 
 <strong><em>Repeater Mode:</em></strong>
 <dd>The device copies and reinforces the existing wireless signal to extend the coverage of the signal. So the network name(SSID) and password don't change. This mode is especially useful for a large space to eliminate signal-blind corners.</dd>
+
+{% img /images/repeater.jpeg 400 400 Repeater-Mode "Image Describing the Repeater Mode" %}
 
 <br>
 
@@ -34,7 +40,11 @@ There are five modes in which the router can be configured:
 <strong><em>Router Mode:</em></strong>
 <dd>The device is connected to a DSL or cable modem and works as a Regular Wireless Router</dd>
 
+{% img /images/router.jpeg 400 400 Router-Mode "Image Describing the Router Mode" %}
+
 <br>
 
 <strong><em>Bridge Mode:</em></strong>
 <dd>The device borrows existing wireless internet and broadcasts it using a different network name(SSID) and password</dd>
+
+{% img /images/bridge.jpeg 400 400 Bridge-Mode "Image Describing the Bridge Mode" %}

@@ -1,0 +1,63 @@
+---
+layout: post
+title: "How to install Prezi on Ubuntu"
+date: 2013-06-21 18:08
+comments: true
+categories: 
+---
+
+<h3>First of all install Adobe-Air</h3>
+Step.1: Download [Adobe-Air-2.6](http://airdownload.adobe.com/air/lin/download/2.6/AdobeAIRInstaller.bin)
+
+<br>
+
+
+Step.2: Download [getlibs-all.deb](http://jeffhendricks.net/getlibs-all.deb)
+
+<br>
+
+
+Step.3: Install it. In terminal cd, to the directory you stored "getlibs-all.deb" and run the following command.
+	sudo dpkg -i getlibs-all.deb
+It is useful for finding 32-bit libraries for 64-bit system
+
+
+<br>
+
+
+Step.4: Now install libhal-storage1, lib32nss-mdns, and libgnome-keyring0 if it's not installed.
+	sudo apt-get install libhal-storage1 libgnome-keyring0 lib32nss-mdns
+
+<br>
+
+
+Step.5: Now, we need to install all the missing 32-bit libraries that it will need.
+	sudo getlibs -l libhal-storage.so.1
+	sudo getlibs -l libgnome-keyring.so.0.1.1
+
+<br>
+
+
+Step.6: Now you need to link a couple of libraries.
+	sudo ln -s /usr/lib/i386-linux-gnu/libgnome-keyring.so.0 /usr/lib/libgnome-keyring.so.0
+
+<br>
+
+
+Step.7: Now run the actual Air installer. In terminal cd, to the directory you stored "AdobeAIRInstaller.bin" and run the following command.
+	chmod +x ./AdobeAIRInstaller.bin
+	sudo ./AdobeAIRInstaller.bin
+This starts installing the Adobe-AIR on your system.
+
+<br>
+
+<h3>Now install Prezi</h3>
+Step.1: Download the [Prezi](http://cdn01.prezi.com/prezi/desktop/PreziDesktop_3.090.air) package.
+
+<br>
+
+Step.2: Open Adobe-Air in your computer and it will prompt you to choose a package.
+
+<br>
+
+Step.3: Select the downloaded ".air" package that you just downloaded and you are all set to install Prezi
