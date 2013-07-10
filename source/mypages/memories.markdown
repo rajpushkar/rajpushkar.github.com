@@ -8,4 +8,4 @@ footer: true
 ---
 This page shares the beautiful memories of my life...Thankyou all for being a part of my life and making it more enjoyable and memorable...love you all!!
 
-{% img left {{root_url}}/mypic.jpg 300 400 %}
+{% img left images/mypic.jpg 300 400 %}

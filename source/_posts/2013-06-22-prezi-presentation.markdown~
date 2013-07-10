@@ -1,0 +1,10 @@
+---
+layout: post
+title: "Presentation"
+date: 2013-06-22 12:10
+comments: true
+categories: 
+---
+Following is a presentation related to my project that i have created using Prezi.
+
+{% video http://http://prezi.com/sosy6sjwqh1d/documentation/ 600 600 %}
