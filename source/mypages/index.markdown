@@ -8,4 +8,4 @@ footer: true
 ---
 
 This page contains links to all the pages created by me.
-<a href="https://rajpushkar.github.io/mypages/memories/>Memories</a>
+<a href="https://rajpushkar.github.io/mypages/memories/">Memories</a>
