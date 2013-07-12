@@ -52,7 +52,7 @@ body{
 <p><h1>Know the Water around you.</h1></p>
 <p><h1>Be Healthy.</h1></p>
 
-<h1 class="border"><a href="http://192.168.0.52/query.php">ENTER</a></h1>
+<h1 class="border"><a href="http://localhost/query.php">ENTER</a></h1>
 
 
 </body>
