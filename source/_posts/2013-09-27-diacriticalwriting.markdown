@@ -35,4 +35,6 @@ Click <i>OK</i> and also on the next two windows that appear click <i>OK</i>
 Now the following window shows you the key-pair to use for writing the words with diacritical marks. 
 {% img /images/Snapshot11.png %}
 Suppose you want to write "Ø" then as shown first you have to type "O/" and then you need to press the CSC key-combination set by you, which in my case is <strong>alt+F3</strong>
+Simillarly to type any other character just look for its key-pair value and then afte typing in the key-pair value press your CSC key and you are done.
+As simple as that!
 
