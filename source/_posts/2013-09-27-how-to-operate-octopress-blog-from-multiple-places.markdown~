@@ -1,0 +1,63 @@
+---
+layout: post
+title: "How to Operate Octopress Blog from multiple places"
+date: 2013-09-27 17:20
+comments: true
+categories: 
+---
+
+Hi all! I have been using octopress blog for a couple of months now. I find it very interesting to work with. But a problem I used to face with Octopress is that I was unable to operate it from multiple machines. The complete setup was on my laptop and if I want to post anything onto the blog from a system in my institute, I can't.
+As long as my laptop was serving my purpose I didn't bother but one day my hard-disk crashed and then I was left with no other option then finding a solution to operate the blog from multiple places.
+<br>
+I had the basic understanding as to what does different folders inside the octopress folder actually mean.
+<br>
+1. The octopress repository cotains two branches: <strong>Source</strong> and <strong>Master</strong>
+The Source branch contains the files necessary to generate the blog and the actual blog is contained in the Master branch.
+While configuring the blog initially the source branch is cloned into the folder named octopress and the files of the actual blog are cloned into the sub-folder named _deploy.
+<br>
+2. All the files and folders are pushed to the Source branch when we run the <strong>git push origin source</strong> command on terminal except the <strong>_deploy</strong> folder which contains the files of the actual blog and are pushed to master branch automatically when we run <strong>rake deploy</strong> command.
+<br>
+So the steps that I followed are as follows:
+##Step.1##
+I Cloned the Source branch to a local directory named Octopress:
+	git clone -b source git@github.com:username/username.github.com.git octopress
+
+##Step.2##
+CD to the octopress directory just created and cloned the master branch into a directory named _deploy:
+	git clone git@github.com:username/username.github.com.git _deploy
+
+##Step.3##
+Then I installed ruby as follows:
+	curl -L https://get.rvm.io | bash -s stable --ruby
+	rvm install 1.9.3
+	rvm use 1.9.3
+	rvm rubygems latest
+after this I configured everything according to the octopress guidelines:
+	gem install bundler
+	bundle install
+	rake setup_github_pages
+This prompted me to enter read/write URL for my blog
+	Enter the read/write url for your repository
+	(For example, 'git@github.com:username/username.github.com)
+Here I have omitted the step <strong>rake install</strong> because it installs the default theme to the octopress and there was already a theme installed on my blog. If you want to install the default octopress theme then run the command <strong>rake install</strong> before running <strong>rake setup_github_pages</strong>
+<br>
+That's it. Now I have a complete copy of my octopress blog.
+Now I can do whatever I like as i used to do before loosing my blog.
+
+<strong>If you want to operate your blog from multiple places</strong> you just need to setup a copy of your blog locally on all the machines and then before making changes from any machine do the following:
+<br>
+Go to the <strong>octopress</strong> directory and pull the <strong>source</strong> branch:
+	cd /path/to/octopress/directory
+	git pull origin source
+Go to the <strong>_deploy</strong> directory and pull the <strong>master</strong> branch:
+	cd _deploy
+	git pull origin master
+Make changes and push:
+	git add .
+	git commit -m "your message"
+	git push origin source
+Deploy:
+	rake generate
+	rake deploy
+
+That's it!
