@@ -1,0 +1,240 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>How to Operate Octopress Blog from multiple places - Pushkar Raj's Blog</title>
+    <meta name="author" content="Mehandiratta">
+    
+	<meta name="description" content="Hi all! I have been using octopress blog for a couple of months now. I find it very interesting to work with. But a problem I used to face with &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Pushkar Raj's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        Mehandiratta
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">How to Operate Octopress Blog From Multiple Places</h2>
+	<div class="entry-content"><p>Hi all! I have been using octopress blog for a couple of months now. I find it very interesting to work with. But a problem I used to face with Octopress is that I was unable to operate it from multiple machines. The complete setup was on my laptop and if I want to post anything onto the blog from a system in my institute, I can&rsquo;t.
+As long as my laptop was serving my purpose I didn&rsquo;t bother but one day my hard-disk crashed and then I was left with no other option then finding a solution to operate the blog from multiple places.</p>
+
+<br>
+
+
+<p>I had the basic understanding as to what does different folders inside the octopress folder actually mean.</p>
+
+<br>
+
+
+<p>The octopress repository cotains two branches: <strong>Source</strong> and <strong>Master</strong>
+The Source branch contains the files necessary to generate the blog and the actual blog is contained in the Master branch.
+While configuring the blog initially the source branch is cloned into the folder named octopress and the files of the actual blog are cloned into the sub-folder named _deploy.</p>
+
+<br>
+
+
+<p>All the files and folders are pushed to the Source branch when we run the <strong>git push origin source</strong> command on terminal except the <strong>_deploy</strong> folder which contains the files of the actual blog and are pushed to master branch automatically when we run <strong>rake deploy</strong> command.</p>
+
+<br>
+
+
+<p>So the steps that I followed are as follows:</p>
+
+<h2>Step.1</h2>
+
+<p>I Cloned the Source branch to a local directory named Octopress:</p>
+
+<pre><code>git clone -b source git@github.com:username/username.github.com.git octopress
+</code></pre>
+
+<h2>Step.2</h2>
+
+<p>CD to the octopress directory just created and cloned the master branch into a directory named _deploy:</p>
+
+<pre><code>git clone git@github.com:username/username.github.com.git _deploy
+</code></pre>
+
+<h2>Step.3</h2>
+
+<p>Then I installed ruby as follows:</p>
+
+<pre><code>curl -L https://get.rvm.io | bash -s stable --ruby
+rvm install 1.9.3
+rvm use 1.9.3
+rvm rubygems latest
+</code></pre>
+
+<p>after this I configured everything according to the octopress guidelines:</p>
+
+<pre><code>gem install bundler
+bundle install
+rake setup_github_pages
+</code></pre>
+
+<p>This prompted me to enter read/write URL for my blog</p>
+
+<pre><code>Enter the read/write url for your repository
+(For example, 'git@github.com:username/username.github.com)
+</code></pre>
+
+<p>Here I have omitted the step <strong>rake install</strong> because it installs the default theme to the octopress and there was already a theme installed on my blog. If you want to install the default octopress theme then run the command <strong>rake install</strong> before running <strong>rake setup_github_pages</strong></p>
+
+<br>
+
+
+<p>That&rsquo;s it. Now I have a complete copy of my octopress blog.
+Now I can do whatever I like as i used to do before loosing my blog.</p>
+
+<p><strong>If you want to operate your blog from multiple places</strong> you just need to setup a copy of your blog locally on all the machines and then before making changes from any machine do the following:</p>
+
+<br>
+
+
+<p>Go to the <strong>octopress</strong> directory and pull the <strong>source</strong> branch:</p>
+
+<pre><code>cd /path/to/octopress/directory
+git pull origin source
+</code></pre>
+
+<p>Go to the <strong>_deploy</strong> directory and pull the <strong>master</strong> branch:</p>
+
+<pre><code>cd _deploy
+git pull origin master
+</code></pre>
+
+<p>Make changes and push:</p>
+
+<pre><code>git add .
+git commit -m "your message"
+git push origin source
+</code></pre>
+
+<p>Deploy:</p>
+
+<pre><code>rake generate
+rake deploy
+</code></pre>
+
+<p>That&rsquo;s it!</p>
+</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Mehandiratta
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

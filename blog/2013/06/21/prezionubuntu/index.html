@@ -1,0 +1,214 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>How to install Prezi on Ubuntu - Pushkar Raj's Blog</title>
+    <meta name="author" content="Mehandiratta">
+    
+	<meta name="description" content="First of all install Adobe-Air. Step.1: Download Adobe-Air-2.6 Step.2: Download getlibs-all.deb Step.3: Install it. In terminal cd, to the directory &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Pushkar Raj's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        Mehandiratta
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">How to Install Prezi on Ubuntu</h2>
+	<div class="entry-content"><h3>First of all install Adobe-Air.</h3>
+
+
+<p>Step.1: Download <a href="http://airdownload.adobe.com/air/lin/download/2.6/AdobeAIRInstaller.bin">Adobe-Air-2.6</a></p>
+
+<br>
+
+
+<p>Step.2: Download <a href="http://jeffhendricks.net/getlibs-all.deb">getlibs-all.deb</a></p>
+
+<br>
+
+
+<p>Step.3: Install it. In terminal cd, to the directory you stored &ldquo;getlibs-all.deb&rdquo; and run the following command.</p>
+
+<pre><code>sudo dpkg -i getlibs-all.deb
+</code></pre>
+
+<p>It is useful for finding 32-bit libraries for 64-bit system.</p>
+
+<br>
+
+
+<p>Step.4: Now install libhal-storage1, lib32nss-mdns, and libgnome-keyring0 if it&rsquo;s not installed.</p>
+
+<pre><code>sudo apt-get install libhal-storage1 libgnome-keyring0 lib32nss-mdns
+</code></pre>
+
+<br>
+
+
+<p>Step.5: Now, we need to install all the missing 32-bit libraries that it will need.</p>
+
+<pre><code>sudo getlibs -l libhal-storage.so.1
+sudo getlibs -l libgnome-keyring.so.0.1.1
+</code></pre>
+
+<br>
+
+
+<p>Step.6: Now you need to link a couple of libraries.</p>
+
+<pre><code>sudo ln -s /usr/lib/i386-linux-gnu/libgnome-keyring.so.0 /usr/lib/libgnome-keyring.so.0
+</code></pre>
+
+<br>
+
+
+<p>Step.7: Now run the actual Air installer. In terminal cd, to the directory you stored &ldquo;AdobeAIRInstaller.bin&rdquo; and run the following command.</p>
+
+<pre><code>chmod +x ./AdobeAIRInstaller.bin
+sudo ./AdobeAIRInstaller.bin
+</code></pre>
+
+<p>This starts installing the Adobe-AIR on your system.</p>
+
+<br>
+
+
+
+
+<h3>Now install Prezi</h3>
+
+
+<p>Step.1: Download the <a href="http://cdn01.prezi.com/prezi/desktop/PreziDesktop_3.090.air">Prezi</a> package.</p>
+
+<br>
+
+
+<p>Step.2: Open Adobe-Air in your computer and it will prompt you to choose a package.</p>
+
+<br>
+
+
+<p>Step.3: Select the downloaded &ldquo;.air&rdquo; package that you just downloaded and you are all set to install Prezi.</p>
+</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Mehandiratta
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
