@@ -4,7 +4,7 @@
   <title><![CDATA[Pushkar Raj's Blog]]></title>
   <link href="http://rajpushkar.github.io/atom.xml" rel="self"/>
   <link href="http://rajpushkar.github.io/"/>
-  <updated>2014-04-04T00:40:05+05:30</updated>
+  <updated>2014-04-04T11:48:47+05:30</updated>
   <id>http://rajpushkar.github.io/</id>
   <author>
     <name><![CDATA[Mehandiratta]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to install LAMP on Ubuntu]]></title>
+    <link href="http://rajpushkar.github.io/blog/2014/04/04/how-to-install-lamp-on-ubuntu/"/>
+    <updated>2014-04-04T00:45:00+05:30</updated>
+    <id>http://rajpushkar.github.io/blog/2014/04/04/how-to-install-lamp-on-ubuntu</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Generating SSH keys]]></title>
