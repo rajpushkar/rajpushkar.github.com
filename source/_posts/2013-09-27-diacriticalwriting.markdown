@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-Hi! Today we were conducting the ICT Training at <a href="http://iic.ac.in">IIC, UDSC</a> which aims at promoting the use of Open-Source Softwares in the University and we were giving the Faculty hands-on with Ubuntu. There were many questions that arose out of the crowd and one out of them was how to write characters with <strong>diacritical marks</strong> in <strong>LibreOffice Writer</strong>. I found the question interesting as I got a new thing to explore. So I started searching for the solution and within few minutes I found one.
+Hi! Today we were conducting the ICT Training at <a href="http://iic.ac.in">IIC, UDSC</a> which aims at promoting the use of Open-Source Softwares in the University and we were giving the Faculty hands-on with Ubuntu. There were many questions that arose out of the crowd and one out of them was how to write characters with <strong>diacritical marks</strong>(e.g ë, õ) in <strong>LibreOffice Writer</strong>. I found the question interesting as I got a new thing to explore. So I started searching for the solution and within few minutes I found one.
 <br>
 I am demonstrating the procedure below:
 <br>
