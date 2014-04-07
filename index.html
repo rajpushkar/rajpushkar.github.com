@@ -6,7 +6,7 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content=" Published on: Apr 4th, 2014 Tags: ">
+	<meta name="description" content="Published on: Apr 7th, 2014 Tags: Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC. It is very easy to set up &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,97 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/04/07/creating-a-wifi-hostspot-in-windows/">
+		
+			Creating a WiFi Hostspot in Windows</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T23:32:00+05:30" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC.</p>
+
+<br>
+
+
+<p>It is very easy to set up your PC/Laptop as a Virtual Router. First of all you need to check whether your network card support this feature or not. To check run cmd.exe with administrator privileges and type in following command:</p>
+
+<pre><code>netsh wlan show drivers
+</code></pre>
+
+<p>If in the output there is a line saying</p>
+
+<pre><code>Hosted network supported : yes
+</code></pre>
+
+<p>then you are lucky and all set to go.</p>
+
+<br>
+
+
+<p>Now in the command prompt run the following command to configure the Virtual Router</p>
+
+<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyusage=persistent
+</code></pre>
+
+<p>The parameter keyusage which is set to persistent is required so that your system remembers the password set for the network created even after you reboot your system.</p>
+
+<br>
+
+
+<p>Now to start the network just type in the following command in the command prompt:</p>
+
+<pre><code>netsh wlan start hostednetwork
+</code></pre>
+
+<p>and you are done. You have just converted your PC into a Virtual Router.</p>
+
+<br>
+
+
+<p>To see the information of the Hostednetwork run the following command:</p>
+
+<pre><code>netsh wlan show hostednetwork
+</code></pre>
+
+<p>and to stop the hostednetwork:</p>
+
+<pre><code>netsh wlan stop hostednetwork
+</code></pre>
+
+<p>You can also change the password of your network by just typing a simple command:</p>
+
+<pre><code>netsh wlan refresh hostednetwork &lt;newpassword&gt;
+</code></pre>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -748,115 +839,10 @@ sudo ./AdobeAIRInstaller.bin
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/06/02/apt/">
-		
-			Advanced Packaging Tool</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-02T00:31:00+05:30" pubdate data-updated="true">Jun 2<span>nd</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p><em>Advanced Packaging Tool is a user interface that lets the user install and remove packages/softwares on Debian/GNU Linux Distributions.</em></p>
-
-<h2>Searching for Packages</h2>
-
-<p>To search for a software/package in the repositories run the following command in the terminal</p>
-
-<pre><code>apt-cache search &lt;search-term&gt;|less
-</code></pre>
-
-<p>less is used for a better navigation through the output list</p>
-
-<h2>Adding Repositories</h2>
-
-<p>To add the repository run the following command</p>
-
-<pre><code>sudo add-apt-repository &lt;repository name&gt;
-</code></pre>
-
-<p>Manually the repositories can be added or changed by editing APTs source file</p>
-
-<pre><code>sudo vi /etc/apt/sources.list
-</code></pre>
-
-<h2>Updating Sources</h2>
-
-<p>After adding repositories, the Package List has to be updated</p>
-
-<pre><code>sudo apt-get update
-</code></pre>
-
-<p>This will update the package list from all repositories in one go.
-Remember to do this after every added repository</p>
-
-<h2>Installation</h2>
-
-<p>Now that you have added the software repository and updated your package list, and found the package name you need, you can install it by running the following command</p>
-
-<pre><code>sudo apt-get install &lt;Package Names&gt;
-</code></pre>
-
-<p>This will download and install all of the packages mentioned.If there are dependencies-other prerequisite packages-they will also be installed</p>
-
-<h2>Removing Packages</h2>
-
-<p>To get rid of a program run the following command</p>
-
-<pre><code>sudo apt-get remove &lt;Package Name&gt;
-</code></pre>
-
-<p>To get rid of the configuration files and associated directories as well</p>
-
-<pre><code>sudo apt-get --purge remove &lt;Package Name&gt;
-</code></pre>
-
-<h2>Checking What is Installed</h2>
-
-<p>A list of all the installed packages can be seen by</p>
-
-<pre><code>sudo dpkg --list
-</code></pre>
-
-<p>To search through the list use the grep command</p>
-
-<pre><code>sudo dpkg --list|grep &lt;search term&gt;
-</code></pre>
-
-<p>If you want to know whether the particular package has been installed or not</p>
-
-<pre><code>dpkg -s &lt;Package Name&gt;
-</code></pre>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
 <nav id="pagenavi">
     
+    
+        <a href="/blog/page/2/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav>

@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Blog Archives - Pushkar Raj's Blog</title>
+	<title>Creating a WiFi Hostspot in Windows - Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="2014 Creating a WiFi Hostspot in Windows Apr 7 How to Install LAMP on Ubuntu Apr 4 Generating SSH Keys Feb 12 2013 Libre Office Writer: How to Write &hellip;">
+	<meta name="description" content="Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC. It is very easy to set up your PC/Laptop as a Virtual Router &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,180 +78,81 @@
 <div id="toload">
 <!-- begin toload --> 
     <div id="content" class="inner">
-        
+        <article class="post">
+	<h2 class="title">Creating a WiFi Hostspot in Windows</h2>
+	<div class="entry-content"><p>Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC.</p>
+
+<br>
+
+
+<p>It is very easy to set up your PC/Laptop as a Virtual Router. First of all you need to check whether your network card support this feature or not. To check run cmd.exe with administrator privileges and type in following command:</p>
+
+<pre><code>netsh wlan show drivers
+</code></pre>
+
+<p>If in the output there is a line saying</p>
+
+<pre><code>Hosted network supported : yes
+</code></pre>
+
+<p>then you are lucky and all set to go.</p>
+
+<br>
+
+
+<p>Now in the command prompt run the following command to configure the Virtual Router</p>
+
+<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyusage=persistent
+</code></pre>
+
+<p>The parameter keyusage which is set to persistent is required so that your system remembers the password set for the network created even after you reboot your system.</p>
+
+<br>
+
+
+<p>Now to start the network just type in the following command in the command prompt:</p>
+
+<pre><code>netsh wlan start hostednetwork
+</code></pre>
+
+<p>and you are done. You have just converted your PC into a Virtual Router.</p>
+
+<br>
+
+
+<p>To see the information of the Hostednetwork run the following command:</p>
+
+<pre><code>netsh wlan show hostednetwork
+</code></pre>
+
+<p>and to stop the hostednetwork:</p>
+
+<pre><code>netsh wlan stop hostednetwork
+</code></pre>
+
+<p>You can also change the password of your network by just typing a simple command:</p>
+
+<pre><code>netsh wlan refresh hostednetwork &lt;newpassword&gt;
+</code></pre>
+</div>
+
+<div class="meta">
 	
-
-
-	
-	
-	<section class="archives"><h1 class="year">2014</h1>
-
-<article>
-  <h2 class="title"><a href="/blog/2014/04/07/creating-a-wifi-hostspot-in-windows/">Creating a WiFi Hostspot in Windows</a></h2>
-	<div class="meta">
-		<span class="date">Apr  7</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
+</div>
 </article>
 
-
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/04/04/how-to-install-lamp-on-ubuntu/">How to Install LAMP on Ubuntu</a></h2>
-	<div class="meta">
-		<span class="date">Apr  4</span>
-		<span class="tags">
-
-</span>
-	    
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
-</article>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/02/12/generating-ssh-keys/">Generating SSH Keys</a></h2>
-	<div class="meta">
-		<span class="date">Feb 12</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2013</h1>
-
-<article>
-  <h2 class="title"><a href="/blog/2013/09/27/diacriticalwriting/">Libre Office Writer: How to Write Letters With Diacritical Marks</a></h2>
-	<div class="meta">
-		<span class="date">Sep 27</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2013/09/27/how-to-operate-octopress-blog-from-multiple-places/">How to Operate Octopress Blog From Multiple Places</a></h2>
-	<div class="meta">
-		<span class="date">Sep 27</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2013/09/26/grub-recovery-after-installing-windows/">Grub Recovery After Installing Windows</a></h2>
-	<div class="meta">
-		<span class="date">Sep 26</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2013/06/21/prezionubuntu/">How to Install Prezi on Ubuntu</a></h2>
-	<div class="meta">
-		<span class="date">Jun 21</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2013/06/07/tplink/">TP-Link TL-WR702N Router Configuration Settings</a></h2>
-	<div class="meta">
-		<span class="date">Jun  7</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2013/06/02/what-is-octopress/">What Is Octopress??</a></h2>
-	<div class="meta">
-		<span class="date">Jun  2</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2013/06/02/introduction-to-the-python/">Introduction to the Python</a></h2>
-	<div class="meta">
-		<span class="date">Jun  2</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2013/06/02/apt/">Advanced Packaging Tool</a></h2>
-	<div class="meta">
-		<span class="date">Jun  2</span>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-</article>
 
 
     </div>
