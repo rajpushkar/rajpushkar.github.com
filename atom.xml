@@ -4,7 +4,7 @@
   <title><![CDATA[Pushkar Raj's Blog]]></title>
   <link href="http://rajpushkar.github.io/atom.xml" rel="self"/>
   <link href="http://rajpushkar.github.io/"/>
-  <updated>2014-04-07T23:48:41+05:30</updated>
+  <updated>2014-04-08T00:58:40+05:30</updated>
   <id>http://rajpushkar.github.io/</id>
   <author>
     <name><![CDATA[Mehandiratta]]></name>
@@ -115,7 +115,7 @@ ls -al
     <link href="http://rajpushkar.github.io/blog/2013/09/27/diacriticalwriting/"/>
     <updated>2013-09-27T21:07:00+05:30</updated>
     <id>http://rajpushkar.github.io/blog/2013/09/27/diacriticalwriting</id>
-    <content type="html"><![CDATA[<p>Hi! Today we were conducting the ICT Training at <a href="http://iic.ac.in">IIC, UDSC</a> which aims at promoting the use of Open-Source Softwares in the University and we were giving the Faculty hands-on with Ubuntu. There were many questions that arose out of the crowd and one out of them was how to write characters with <strong>diacritical marks</strong> in <strong>LibreOffice Writer</strong>. I found the question interesting as I got a new thing to explore. So I started searching for the solution and within few minutes I found one.</p>
+    <content type="html"><![CDATA[<p>Hi! Today we were conducting the ICT Training at <a href="http://iic.ac.in">IIC, UDSC</a> which aims at promoting the use of Open-Source Softwares in the University and we were giving the Faculty hands-on with Ubuntu. There were many questions that arose out of the crowd and one out of them was how to write characters with <strong>diacritical marks</strong>(e.g ë, õ) in <strong>LibreOffice Writer</strong>. I found the question interesting as I got a new thing to explore. So I started searching for the solution and within few minutes I found one.</p>
 
 <br>
 
