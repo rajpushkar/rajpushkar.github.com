@@ -16,12 +16,13 @@ then you are lucky and all set to go.
 <br>
 
 Now in the command prompt run the following command to configure the Virtual Router
-	netsh wlan set hostednetwork mode=allow ssid=<network ssid> key=<password> keyusage=persistent
+	netsh wlan set hostednetwork mode=allow ssid=<network ssid> key=<password> keyUsage=persistent
 The parameter keyusage which is set to persistent is required so that your system remembers the password set for the network created even after you reboot your system.
 <br>
 Now to start the network just type in the following command in the command prompt:
 	netsh wlan start hostednetwork
 and you are done. You have just converted your PC into a Virtual Router.
+But before you can actually use your Hotspot network to access the internet you have to do one more step which is to allow your original Wi-Fi network be accessed by other devices for which you need to go to wireless properties and under the sharing tab enable the option saying "Allow other devices to connect to this network"
 <br>
 To see the information of the Hostednetwork run the following command:
 	netsh wlan show hostednetwork
