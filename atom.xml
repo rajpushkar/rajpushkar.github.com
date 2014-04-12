@@ -4,7 +4,7 @@
   <title><![CDATA[Pushkar Raj's Blog]]></title>
   <link href="http://rajpushkar.github.io/atom.xml" rel="self"/>
   <link href="http://rajpushkar.github.io/"/>
-  <updated>2014-04-08T00:58:40+05:30</updated>
+  <updated>2014-04-13T03:08:12+05:30</updated>
   <id>http://rajpushkar.github.io/</id>
   <author>
     <name><![CDATA[Mehandiratta]]></name>
@@ -12,6 +12,137 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The simplest YUM guide]]></title>
+    <link href="http://rajpushkar.github.io/blog/2014/04/13/the-simplest-yum-guide/"/>
+    <updated>2014-04-13T02:20:00+05:30</updated>
+    <id>http://rajpushkar.github.io/blog/2014/04/13/the-simplest-yum-guide</id>
+    <content type="html"><![CDATA[<p>Hi! This post will make you familiar with the YUM utility provided with Fedora.
+You can easily download, install or remove any package/module after going through this easy YUM guide.
+Taking you directly to the commands, If you want to search for a module:</p>
+
+<pre><code>yum search &lt;module name&gt;
+</code></pre>
+
+<p>To get information about a module:</p>
+
+<pre><code>yum info &lt;module name&gt;
+</code></pre>
+
+<p>To install a module:</p>
+
+<pre><code>sudo yum install &lt;module name&gt;
+</code></pre>
+
+<p>To remove a module:</p>
+
+<pre><code>sudo yum remove &lt;module name&gt;
+</code></pre>
+
+<p>To check for updates:</p>
+
+<pre><code>yum check update
+</code></pre>
+
+<p>To install updates;</p>
+
+<pre><code>sudo yum update
+</code></pre>
+
+<p>To update a single module:</p>
+
+<pre><code>yum update &lt;module name&gt;
+</code></pre>
+
+<p>excluding a module from being updated:</p>
+
+<pre><code>yum --exclude=package &lt;module name&gt; updated
+</code></pre>
+
+<p>To find out the dependencies of a module</p>
+
+<pre><code>yum deplist &lt;module name&gt;
+</code></pre>
+
+<br>
+
+
+<p>To uninstall a module:</p>
+
+<pre><code>yum remove &lt;module name&gt;
+or
+yum erase &lt;module name&gt;
+</code></pre>
+
+<p>To search for a module which can be directly installed using YUM</p>
+
+<pre><code>yum list | grep &lt;module name&gt;
+</code></pre>
+
+<p>To find whether a module has been installed or not:</p>
+
+<pre><code>yum list installed | grep &lt;module name&gt;
+</code></pre>
+
+<p>If in the output you see the package listed then it is installed else there will be no output.</p>
+
+<br>
+
+
+<br>
+
+
+<p>To install a yum group. Say I want to install the group of editors</p>
+
+<pre><code>yum groupinstall editors
+</code></pre>
+
+<p>To remove the editors yum group</p>
+
+<pre><code>yum groupremove editors
+</code></pre>
+
+<p>To update a yum group:</p>
+
+<pre><code>yum groupupdate &lt;group name&gt;
+</code></pre>
+
+<p>To list packages in a YUM group:</p>
+
+<pre><code>yum groupinfo &lt;group-name&gt;
+</code></pre>
+
+<p>To list YUM groups:</p>
+
+<pre><code>yum grouplist | less 
+</code></pre>
+
+<br>
+
+
+<br>
+
+
+<p>To know the kernel-images currently installed:</p>
+
+<pre><code>rpm -q kernel
+</code></pre>
+
+<p>To remove old kernels:</p>
+
+<pre><code>sudo yum remove kernel
+</code></pre>
+
+<p>Fedora retains the three latest kernels to ensure that there is always a working kernel installed, in case the latest kernel breaks something.
+The limit can be changed by changing the value of &lsquo;installonly_limit&rsquo; in the &lsquo;/etc/yum.conf&rsquo; file.</p>
+
+<p>To remove a specific kernel:</p>
+
+<pre><code>sudo yum remove &lt;kernel package&gt;
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a WiFi Hostspot in Windows]]></title>
@@ -40,7 +171,7 @@
 
 <p>Now in the command prompt run the following command to configure the Virtual Router</p>
 
-<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyusage=persistent
+<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyUsage=persistent
 </code></pre>
 
 <p>The parameter keyusage which is set to persistent is required so that your system remembers the password set for the network created even after you reboot your system.</p>
@@ -53,7 +184,8 @@
 <pre><code>netsh wlan start hostednetwork
 </code></pre>
 
-<p>and you are done. You have just converted your PC into a Virtual Router.</p>
+<p>and you are done. You have just converted your PC into a Virtual Router.
+But before you can actually use your Hotspot network to access the internet you have to do one more step which is to allow your original Wi-Fi network be accessed by other devices for which you need to go to wireless properties and under the sharing tab enable the option saying &ldquo;Allow other devices to connect to this network&rdquo;</p>
 
 <br>
 

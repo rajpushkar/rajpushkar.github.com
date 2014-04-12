@@ -6,7 +6,8 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Apr 7th, 2014 Tags: Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC. It is very easy to set up &hellip;">
+	<meta name="description" content="Published on: Apr 13th, 2014 Tags: Hi! This post will make you familiar with the YUM utility provided with Fedora.
+You can easily download, install &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,6 +85,166 @@
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/04/13/the-simplest-yum-guide/">
+		
+			The Simplest YUM Guide</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-13T02:20:00+05:30" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>Hi! This post will make you familiar with the YUM utility provided with Fedora.
+You can easily download, install or remove any package/module after going through this easy YUM guide.
+Taking you directly to the commands, If you want to search for a module:</p>
+
+<pre><code>yum search &lt;module name&gt;
+</code></pre>
+
+<p>To get information about a module:</p>
+
+<pre><code>yum info &lt;module name&gt;
+</code></pre>
+
+<p>To install a module:</p>
+
+<pre><code>sudo yum install &lt;module name&gt;
+</code></pre>
+
+<p>To remove a module:</p>
+
+<pre><code>sudo yum remove &lt;module name&gt;
+</code></pre>
+
+<p>To check for updates:</p>
+
+<pre><code>yum check update
+</code></pre>
+
+<p>To install updates;</p>
+
+<pre><code>sudo yum update
+</code></pre>
+
+<p>To update a single module:</p>
+
+<pre><code>yum update &lt;module name&gt;
+</code></pre>
+
+<p>excluding a module from being updated:</p>
+
+<pre><code>yum --exclude=package &lt;module name&gt; updated
+</code></pre>
+
+<p>To find out the dependencies of a module</p>
+
+<pre><code>yum deplist &lt;module name&gt;
+</code></pre>
+
+<br>
+
+
+<p>To uninstall a module:</p>
+
+<pre><code>yum remove &lt;module name&gt;
+or
+yum erase &lt;module name&gt;
+</code></pre>
+
+<p>To search for a module which can be directly installed using YUM</p>
+
+<pre><code>yum list | grep &lt;module name&gt;
+</code></pre>
+
+<p>To find whether a module has been installed or not:</p>
+
+<pre><code>yum list installed | grep &lt;module name&gt;
+</code></pre>
+
+<p>If in the output you see the package listed then it is installed else there will be no output.</p>
+
+<br>
+
+
+<br>
+
+
+<p>To install a yum group. Say I want to install the group of editors</p>
+
+<pre><code>yum groupinstall editors
+</code></pre>
+
+<p>To remove the editors yum group</p>
+
+<pre><code>yum groupremove editors
+</code></pre>
+
+<p>To update a yum group:</p>
+
+<pre><code>yum groupupdate &lt;group name&gt;
+</code></pre>
+
+<p>To list packages in a YUM group:</p>
+
+<pre><code>yum groupinfo &lt;group-name&gt;
+</code></pre>
+
+<p>To list YUM groups:</p>
+
+<pre><code>yum grouplist | less 
+</code></pre>
+
+<br>
+
+
+<br>
+
+
+<p>To know the kernel-images currently installed:</p>
+
+<pre><code>rpm -q kernel
+</code></pre>
+
+<p>To remove old kernels:</p>
+
+<pre><code>sudo yum remove kernel
+</code></pre>
+
+<p>Fedora retains the three latest kernels to ensure that there is always a working kernel installed, in case the latest kernel breaks something.
+The limit can be changed by changing the value of &lsquo;installonly_limit&rsquo; in the &lsquo;/etc/yum.conf&rsquo; file.</p>
+
+<p>To remove a specific kernel:</p>
+
+<pre><code>sudo yum remove &lt;kernel package&gt;
+</code></pre>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/04/07/creating-a-wifi-hostspot-in-windows/">
 		
 			Creating a WiFi Hostspot in Windows</a>
@@ -129,7 +290,7 @@
 
 <p>Now in the command prompt run the following command to configure the Virtual Router</p>
 
-<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyusage=persistent
+<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyUsage=persistent
 </code></pre>
 
 <p>The parameter keyusage which is set to persistent is required so that your system remembers the password set for the network created even after you reboot your system.</p>
@@ -142,7 +303,8 @@
 <pre><code>netsh wlan start hostednetwork
 </code></pre>
 
-<p>and you are done. You have just converted your PC into a Virtual Router.</p>
+<p>and you are done. You have just converted your PC into a Virtual Router.
+But before you can actually use your Hotspot network to access the internet you have to do one more step which is to allow your original Wi-Fi network be accessed by other devices for which you need to go to wireless properties and under the sharing tab enable the option saying &ldquo;Allow other devices to connect to this network&rdquo;</p>
 
 <br>
 
@@ -774,61 +936,6 @@ sudo ./AdobeAIRInstaller.bin
 </div>
     </div>
 		
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/06/02/introduction-to-the-python/">
-		
-			Introduction to the Python</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-02T03:05:00+05:30" pubdate data-updated="true">Jun 2<span>nd</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs.</p>
-
-<p>Python is a remarkably powerful dynamic programming language that is used in a wide variety of application domains. Python is often compared to Tcl, Perl, Ruby, Scheme or Java. Some of its key distinguishing features include:</p>
-
-<p>&mdash;very clear, readable syntax
-&mdash;strong introspection capabilities
-&mdash;intuitive object orientation
-&mdash;natural expression of procedural code
-&mdash;full modularity, supporting hierarchical packages
-&mdash;exception-based error handling
-&mdash;very high level dynamic data types
-&mdash;extensive standard libraries and third party modules for virtually every task
-&mdash;extensions and modules easily written in C, C++ (or Java for Jython, or .NET languages for IronPython)
-&mdash;embeddable within applications as a scripting interface</p>
-
-<p>The Python implementation is under an open source license that makes it freely usable and distributable, even for commercial use. The Python license is administered by the Python Software Foundation.</p>
-
-<p>You can read more on www.python.org</p>
 
 		
 		
