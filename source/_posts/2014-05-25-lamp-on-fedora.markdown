@@ -9,20 +9,20 @@ To install LAMP on fedora just follow the following steps and within few minutes
 
 Step.1: We must install the updates first:
 	sudo yum update
-	
+<br>	
 Step.2: Installing Apache:
 	sudo yum install httpd
 The Apache service can be started by running
 	sudo service httpd start
-
+<br>
 Step.3: Installing MySQL:
 	sudo yum install mysql mysql-server
 To Start MySQL
 	sudo service mysqld start
-
+<br>
 Step.4: Installing PHP
 	sudo yum install php php-mysql
-
+<br>
 To check whether LAMP is correctly installed and working make a file <strong>info.php</strong> inside the /var/www/html directory
 	sudo vi /var/www/html/info.php
 and paste the following lines into it and save it
@@ -39,7 +39,7 @@ Now in the browser enter the URL of your info.php file i.e
 You should see the info page on the browser.
 
 The LAMP stack has, now, been installed on your system.
-
+<br>
 If you want to configure the root password for MySQL run the following command
 	sudo /usr/bin/mysql_secure_installation
 This prompts you to enter the current root password, just leave it blank by pressing enter as you have just installed MySQL and no root password has been set yet.
@@ -55,7 +55,7 @@ If all done, you have successfully setup new root password and your MySQL instal
 Now restart the Apache and Mysql services
 	sudo service httpd restart
 	sudo service mysqld restart
-
+<br>
 To run the services on the startup run the following commands(PHP automatically starts when tha Apache starts):
 	sudo chkconfig httpd on
 	sudo chkconfig mysqld on
