@@ -6,7 +6,7 @@
 	<title>How to install LAMP on Ubuntu - Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content=" ">
+	<meta name="description" content="To install LAMP on Ubuntu just follow the following easy steps. Step1. Install Apache sudo apt-get install apache2 To verify that apache has been &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,7 +80,92 @@
     <div id="content" class="inner">
         <article class="post">
 	<h2 class="title">How to Install LAMP on Ubuntu</h2>
-	<div class="entry-content">
+	<div class="entry-content"><p>To install LAMP on Ubuntu just follow the following easy steps.</p>
+
+<p>Step1. Install Apache</p>
+
+<pre><code>sudo apt-get install apache2
+</code></pre>
+
+<p>To verify that apache has been successfully installed or not type in the URL bar of the browser &ldquo;localhost&rdquo; and in the output you should see something like:</p>
+
+<pre><code>It works!
+This is the default web page for this server.
+The web server software is running but no content has been added, yet.
+</code></pre>
+
+<br>
+
+
+<p>Step2. Install MySQL on the server</p>
+
+<pre><code>sudo apt-get install mysql-server
+</code></pre>
+
+<p>Now start the MySQL service</p>
+
+<pre><code>sudo service mysql start
+</code></pre>
+
+<br>
+
+
+<p>Step3. Install PHP</p>
+
+<pre><code>sudo apt-get install php5 libapache2-mod-php5
+</code></pre>
+
+<p>Now to test the PHP installation make a test.php file in /var/www/ directory and copy the following contents in the file and save it</p>
+
+<pre><code>&lt;?php
+phpinfo();
+?&gt;
+</code></pre>
+
+<p>Now restart the apache service</p>
+
+<pre><code>sudo service apache2 restart
+</code></pre>
+
+<p>and open a browser and type in the URL bar</p>
+
+<pre><code>localhost/test.php
+</code></pre>
+
+<p>which should display the information page of the PHP installed on the system.</p>
+
+<br>
+
+
+<p>Step4. Now if you want to install PHPMyAdmin</p>
+
+<pre><code>sudo apt-get install phpmyadmin
+</code></pre>
+
+<p>Configure it as follows:</p>
+
+<pre><code>*Select apache2 as the web-server
+*Choose yes when asked for whether you want to configure the database for phpmyadmin with dbconfig-common
+* Enter your MySQL password when prompted
+* Enter the password that you want to use to log into phpmyadmin
+</code></pre>
+
+<p>After the installation completes add the phpmyadmin to the apache2.conf file as follows</p>
+
+<pre><code>sudo vim /etc/apache2/apache2.conf
+</code></pre>
+
+<p>and add the following line in the file</p>
+
+<pre><code>Include /etc/phpmyadmin/apache.conf
+</code></pre>
+
+<p>Now restart apache</p>
+
+<pre><code>sudo service apache2 restart
+</code></pre>
+
+<p>and you are all done!</p>
 </div>
 
 <div class="meta">

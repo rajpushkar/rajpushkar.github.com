@@ -6,8 +6,7 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Apr 13th, 2014 Tags: Hi! This post will make you familiar with the YUM utility provided with Fedora.
-You can easily download, install &hellip;">
+	<meta name="description" content="Published on: May 25th, 2014 Tags: To install LAMP on fedora just follow the following steps and within few minutes you will be ready with the LAMP &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +79,148 @@ You can easily download, install &hellip;">
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/25/lamp-on-fedora/">
+		
+			LAMP on Fedora</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-25T22:29:00+05:30" pubdate data-updated="true">May 25<span>th</span>, 2014</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>To install LAMP on fedora just follow the following steps and within few minutes you will be ready with the LAMP stack on your system.</p>
+
+<p>Step.1: We must install the updates first:</p>
+
+<pre><code>sudo yum update
+</code></pre>
+
+<br>    
+
+
+<p>Step.2: Installing Apache:</p>
+
+<pre><code>sudo yum install httpd
+</code></pre>
+
+<p>The Apache service can be started by running</p>
+
+<pre><code>sudo service httpd start
+</code></pre>
+
+<br>
+
+
+<p>Step.3: Installing MySQL:</p>
+
+<pre><code>sudo yum install mysql mysql-server
+</code></pre>
+
+<p>To Start MySQL</p>
+
+<pre><code>sudo service mysqld start
+</code></pre>
+
+<br>
+
+
+<p>Step.4: Installing PHP</p>
+
+<pre><code>sudo yum install php php-mysql
+</code></pre>
+
+<br>
+
+
+<p>To check whether LAMP is correctly installed and working make a file <strong>info.php</strong> inside the /var/www/html directory</p>
+
+<pre><code>sudo vi /var/www/html/info.php
+</code></pre>
+
+<p>and paste the following lines into it and save it</p>
+
+<pre><code>&lt;?php
+phpinfo();
+?&gt;
+</code></pre>
+
+<p>Now restart the Apache</p>
+
+<pre><code>sudo service httpd restart
+</code></pre>
+
+<p>Now in the browser enter the URL of your info.php file i.e</p>
+
+<pre><code>http://localhost/info.php
+</code></pre>
+
+<p>You should see the info page on the browser.</p>
+
+<p>The LAMP stack has, now, been installed on your system.</p>
+
+<br>
+
+
+<p>If you want to configure the root password for MySQL run the following command</p>
+
+<pre><code>sudo /usr/bin/mysql_secure_installation
+</code></pre>
+
+<p>This prompts you to enter the current root password, just leave it blank by pressing enter as you have just installed MySQL and no root password has been set yet.
+Next the prompt asks you whether you want to set a root password, enter y and follow the instructions.
+In the next few steps it will ask you the following questions</p>
+
+<pre><code>Remove anonymous users? [Y/n]
+Disallow root login remotely? [Y/n]
+Remove test database and access to it? [Y/n]
+Reload privilege tables now? [Y/n]
+</code></pre>
+
+<p>Just enter Y for all the questions.
+If all done, you have successfully setup new root password and your MySQL installation is now secure.</p>
+
+<p>Now restart the Apache and Mysql services</p>
+
+<pre><code>sudo service httpd restart
+sudo service mysqld restart
+</code></pre>
+
+<br>
+
+
+<p>To run the services on the startup run the following commands(PHP automatically starts when tha Apache starts):</p>
+
+<pre><code>sudo chkconfig httpd on
+sudo chkconfig mysqld on
+</code></pre>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -230,98 +371,6 @@ The limit can be changed by changing the value of &lsquo;installonly_limit&rsquo
 <p>To remove a specific kernel:</p>
 
 <pre><code>sudo yum remove &lt;kernel package&gt;
-</code></pre>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/04/07/creating-a-wifi-hostspot-in-windows/">
-		
-			Creating a WiFi Hostspot in Windows</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-07T23:32:00+05:30" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC.</p>
-
-<br>
-
-
-<p>It is very easy to set up your PC/Laptop as a Virtual Router. First of all you need to check whether your network card support this feature or not. To check run cmd.exe with administrator privileges and type in following command:</p>
-
-<pre><code>netsh wlan show drivers
-</code></pre>
-
-<p>If in the output there is a line saying</p>
-
-<pre><code>Hosted network supported : yes
-</code></pre>
-
-<p>then you are lucky and all set to go.</p>
-
-<br>
-
-
-<p>Now in the command prompt run the following command to configure the Virtual Router</p>
-
-<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyUsage=persistent
-</code></pre>
-
-<p>The parameter keyusage which is set to persistent is required so that your system remembers the password set for the network created even after you reboot your system.</p>
-
-<br>
-
-
-<p>Now to start the network just type in the following command in the command prompt:</p>
-
-<pre><code>netsh wlan start hostednetwork
-</code></pre>
-
-<p>and you are done. You have just converted your PC into a Virtual Router.
-But before you can actually use your Hotspot network to access the internet you have to do one more step which is to allow your original Wi-Fi network be accessed by other devices for which you need to go to wireless properties and under the sharing tab enable the option saying &ldquo;Allow other devices to connect to this network&rdquo;</p>
-
-<br>
-
-
-<p>To see the information of the Hostednetwork run the following command:</p>
-
-<pre><code>netsh wlan show hostednetwork
-</code></pre>
-
-<p>and to stop the hostednetwork:</p>
-
-<pre><code>netsh wlan stop hostednetwork
-</code></pre>
-
-<p>You can also change the password of your network by just typing a simple command:</p>
-
-<pre><code>netsh wlan refresh hostednetwork &lt;newpassword&gt;
 </code></pre>
 
 		

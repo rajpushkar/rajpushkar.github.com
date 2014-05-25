@@ -6,7 +6,7 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content=" Published on: Apr 4th, 2014 Tags: ">
+	<meta name="description" content="Published on: Apr 7th, 2014 Tags: Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC. It is very easy to set up &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,6 +84,98 @@
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/04/07/creating-a-wifi-hostspot-in-windows/">
+		
+			Creating a WiFi Hostspot in Windows</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T23:32:00+05:30" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC.</p>
+
+<br>
+
+
+<p>It is very easy to set up your PC/Laptop as a Virtual Router. First of all you need to check whether your network card support this feature or not. To check run cmd.exe with administrator privileges and type in following command:</p>
+
+<pre><code>netsh wlan show drivers
+</code></pre>
+
+<p>If in the output there is a line saying</p>
+
+<pre><code>Hosted network supported : yes
+</code></pre>
+
+<p>then you are lucky and all set to go.</p>
+
+<br>
+
+
+<p>Now in the command prompt run the following command to configure the Virtual Router</p>
+
+<pre><code>netsh wlan set hostednetwork mode=allow ssid=&lt;network ssid&gt; key=&lt;password&gt; keyUsage=persistent
+</code></pre>
+
+<p>The parameter keyusage which is set to persistent is required so that your system remembers the password set for the network created even after you reboot your system.</p>
+
+<br>
+
+
+<p>Now to start the network just type in the following command in the command prompt:</p>
+
+<pre><code>netsh wlan start hostednetwork
+</code></pre>
+
+<p>and you are done. You have just converted your PC into a Virtual Router.
+But before you can actually use your Hotspot network to access the internet you have to do one more step which is to allow your original Wi-Fi network be accessed by other devices for which you need to go to wireless properties and under the sharing tab enable the option saying &ldquo;Allow other devices to connect to this network&rdquo;</p>
+
+<br>
+
+
+<p>To see the information of the Hostednetwork run the following command:</p>
+
+<pre><code>netsh wlan show hostednetwork
+</code></pre>
+
+<p>and to stop the hostednetwork:</p>
+
+<pre><code>netsh wlan stop hostednetwork
+</code></pre>
+
+<p>You can also change the password of your network by just typing a simple command:</p>
+
+<pre><code>netsh wlan refresh hostednetwork &lt;newpassword&gt;
+</code></pre>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/04/04/how-to-install-lamp-on-ubuntu/">
 		
 			How to Install LAMP on Ubuntu</a>
@@ -107,62 +199,92 @@
 
 </div>
     </div>
-		
+		<p>To install LAMP on Ubuntu just follow the following easy steps.</p>
 
-		
-		
-	</div>
+<p>Step1. Install Apache</p>
 
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/02/12/generating-ssh-keys/">
-		
-			Generating SSH Keys</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-12T00:55:00+05:30" pubdate data-updated="true">Feb 12<span>th</span>, 2014</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>First you must look for whether there is already an existing SSH key on your system or not.
-To check do the following:</p>
-
-<pre><code>cd ~/.ssh
-ls -al
+<pre><code>sudo apt-get install apache2
 </code></pre>
 
-<p>Check the listing for a file named <strong>id_rsa.pub</strong> or <strong>id_dsa.pub</strong>. If a file with such name exists then you already have an SSH key for your system and if not then run the following command in the terminal to generate one:</p>
+<p>To verify that apache has been successfully installed or not type in the URL bar of the browser &ldquo;localhost&rdquo; and in the output you should see something like:</p>
 
-<pre><code>ssh-keygen -t rsa -C "your_email@example.com"
+<pre><code>It works!
+This is the default web page for this server.
+The web server software is running but no content has been added, yet.
 </code></pre>
-
-<p>Now it will prompt you to enter the file name in which to store the key, just press enter and the key will automatically be stored in the default file i.e <strong>~/.ssh/id_rsa.pub</strong>.</p>
 
 <br>
 
 
-<p>In the next prompt it asks you to enter the passphrase, it&rsquo;s your wish to leave it blank or provide one</p>
+<p>Step2. Install MySQL on the server</p>
+
+<pre><code>sudo apt-get install mysql-server
+</code></pre>
+
+<p>Now start the MySQL service</p>
+
+<pre><code>sudo service mysql start
+</code></pre>
+
+<br>
+
+
+<p>Step3. Install PHP</p>
+
+<pre><code>sudo apt-get install php5 libapache2-mod-php5
+</code></pre>
+
+<p>Now to test the PHP installation make a test.php file in /var/www/ directory and copy the following contents in the file and save it</p>
+
+<pre><code>&lt;?php
+phpinfo();
+?&gt;
+</code></pre>
+
+<p>Now restart the apache service</p>
+
+<pre><code>sudo service apache2 restart
+</code></pre>
+
+<p>and open a browser and type in the URL bar</p>
+
+<pre><code>localhost/test.php
+</code></pre>
+
+<p>which should display the information page of the PHP installed on the system.</p>
+
+<br>
+
+
+<p>Step4. Now if you want to install PHPMyAdmin</p>
+
+<pre><code>sudo apt-get install phpmyadmin
+</code></pre>
+
+<p>Configure it as follows:</p>
+
+<pre><code>*Select apache2 as the web-server
+*Choose yes when asked for whether you want to configure the database for phpmyadmin with dbconfig-common
+* Enter your MySQL password when prompted
+* Enter the password that you want to use to log into phpmyadmin
+</code></pre>
+
+<p>After the installation completes add the phpmyadmin to the apache2.conf file as follows</p>
+
+<pre><code>sudo vim /etc/apache2/apache2.conf
+</code></pre>
+
+<p>and add the following line in the file</p>
+
+<pre><code>Include /etc/phpmyadmin/apache.conf
+</code></pre>
+
+<p>Now restart apache</p>
+
+<pre><code>sudo service apache2 restart
+</code></pre>
+
+<p>and you are all done!</p>
 
 		
 		

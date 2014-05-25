@@ -6,7 +6,8 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Sep 27th, 2013 Tags: Hi! Today we were conducting the ICT Training at IIC, UDSC which aims at promoting the use of Open-Source &hellip;">
+	<meta name="description" content="Published on: Feb 12th, 2014 Tags: First you must look for whether there is already an existing SSH key on your system or not.
+To check do the &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,6 +85,61 @@
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/02/12/generating-ssh-keys/">
+		
+			Generating SSH Keys</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-12T00:55:00+05:30" pubdate data-updated="true">Feb 12<span>th</span>, 2014</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>First you must look for whether there is already an existing SSH key on your system or not.
+To check do the following:</p>
+
+<pre><code>cd ~/.ssh
+ls -al
+</code></pre>
+
+<p>Check the listing for a file named <strong>id_rsa.pub</strong> or <strong>id_dsa.pub</strong>. If a file with such name exists then you already have an SSH key for your system and if not then run the following command in the terminal to generate one:</p>
+
+<pre><code>ssh-keygen -t rsa -C "your_email@example.com"
+</code></pre>
+
+<p>Now it will prompt you to enter the file name in which to store the key, just press enter and the key will automatically be stored in the default file i.e <strong>~/.ssh/id_rsa.pub</strong>.</p>
+
+<br>
+
+
+<p>In the next prompt it asks you to enter the passphrase, it&rsquo;s your wish to leave it blank or provide one</p>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2013/09/27/diacriticalwriting/">
 		
 			Libre Office Writer: How to Write Letters With Diacritical Marks</a>
@@ -150,144 +206,6 @@ Now the following window shows you the key-pair to use for writing the words wit
 Suppose you want to write &ldquo;Ø&rdquo; then as shown first you have to type &ldquo;O/&rdquo; and then you need to press the CSC key-combination set by you, which in my case is <strong>alt+F3</strong>
 Simillarly to type any other character just look for its key-pair value and then afte typing in the key-pair value press your CSC key and you are done.
 As simple as that!</p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/09/27/how-to-operate-octopress-blog-from-multiple-places/">
-		
-			How to Operate Octopress Blog From Multiple Places</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-27T17:20:00+05:30" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>Hi all! I have been using octopress blog for a couple of months now. I find it very interesting to work with. But a problem I used to face with Octopress is that I was unable to operate it from multiple machines. The complete setup was on my laptop and if I want to post anything onto the blog from a system in my institute, I can&rsquo;t.
-As long as my laptop was serving my purpose I didn&rsquo;t bother but one day my hard-disk crashed and then I was left with no other option then finding a solution to operate the blog from multiple places.</p>
-
-<br>
-
-
-<p>I had the basic understanding as to what does different folders inside the octopress folder actually mean.</p>
-
-<br>
-
-
-<p>The octopress repository cotains two branches: <strong>Source</strong> and <strong>Master</strong>
-The Source branch contains the files necessary to generate the blog and the actual blog is contained in the Master branch.
-While configuring the blog initially the source branch is cloned into the folder named octopress and the files of the actual blog are cloned into the sub-folder named _deploy.</p>
-
-<br>
-
-
-<p>All the files and folders are pushed to the Source branch when we run the <strong>git push origin source</strong> command on terminal except the <strong>_deploy</strong> folder which contains the files of the actual blog and are pushed to master branch automatically when we run <strong>rake deploy</strong> command.</p>
-
-<br>
-
-
-<p>So the steps that I followed are as follows:</p>
-
-<h2>Step.1</h2>
-
-<p>I Cloned the Source branch to a local directory named Octopress:</p>
-
-<pre><code>git clone -b source git@github.com:username/username.github.com.git octopress
-</code></pre>
-
-<h2>Step.2</h2>
-
-<p>CD to the octopress directory just created and cloned the master branch into a directory named _deploy:</p>
-
-<pre><code>git clone git@github.com:username/username.github.com.git _deploy
-</code></pre>
-
-<h2>Step.3</h2>
-
-<p>Then I installed ruby as follows:</p>
-
-<pre><code>curl -L https://get.rvm.io | bash -s stable --ruby
-rvm install 1.9.3
-rvm use 1.9.3
-rvm rubygems latest
-</code></pre>
-
-<p>after this I configured everything according to the octopress guidelines:</p>
-
-<pre><code>gem install bundler
-bundle install
-rake setup_github_pages
-</code></pre>
-
-<p>This prompted me to enter read/write URL for my blog</p>
-
-<pre><code>Enter the read/write url for your repository
-(For example, 'git@github.com:username/username.github.com)
-</code></pre>
-
-<p>Here I have omitted the step <strong>rake install</strong> because it installs the default theme to the octopress and there was already a theme installed on my blog. If you want to install the default octopress theme then run the command <strong>rake install</strong> before running <strong>rake setup_github_pages</strong></p>
-
-<br>
-
-
-<p>That&rsquo;s it. Now I have a complete copy of my octopress blog.
-Now I can do whatever I like as i used to do before loosing my blog.</p>
-
-<p><strong>If you want to operate your blog from multiple places</strong> you just need to setup a copy of your blog locally on all the machines and then before making changes from any machine do the following:</p>
-
-<br>
-
-
-<p>Go to the <strong>octopress</strong> directory and pull the <strong>source</strong> branch:</p>
-
-<pre><code>cd /path/to/octopress/directory
-git pull origin source
-</code></pre>
-
-<p>Go to the <strong>_deploy</strong> directory and pull the <strong>master</strong> branch:</p>
-
-<pre><code>cd _deploy
-git pull origin master
-</code></pre>
-
-<p>Make changes and push:</p>
-
-<pre><code>git add .
-git commit -m "your message"
-git push origin source
-</code></pre>
-
-<p>Deploy:</p>
-
-<pre><code>rake generate
-rake deploy
-</code></pre>
-
-<p>That&rsquo;s it!</p>
 
 		
 		

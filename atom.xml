@@ -4,7 +4,7 @@
   <title><![CDATA[Pushkar Raj's Blog]]></title>
   <link href="http://rajpushkar.github.io/atom.xml" rel="self"/>
   <link href="http://rajpushkar.github.io/"/>
-  <updated>2014-04-13T03:35:31+05:30</updated>
+  <updated>2014-05-25T23:21:38+05:30</updated>
   <id>http://rajpushkar.github.io/</id>
   <author>
     <name><![CDATA[Mehandiratta]]></name>
@@ -12,6 +12,119 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[LAMP on Fedora]]></title>
+    <link href="http://rajpushkar.github.io/blog/2014/05/25/lamp-on-fedora/"/>
+    <updated>2014-05-25T22:29:00+05:30</updated>
+    <id>http://rajpushkar.github.io/blog/2014/05/25/lamp-on-fedora</id>
+    <content type="html"><![CDATA[<p>To install LAMP on fedora just follow the following steps and within few minutes you will be ready with the LAMP stack on your system.</p>
+
+<p>Step.1: We must install the updates first:</p>
+
+<pre><code>sudo yum update
+</code></pre>
+
+<br>    
+
+
+<p>Step.2: Installing Apache:</p>
+
+<pre><code>sudo yum install httpd
+</code></pre>
+
+<p>The Apache service can be started by running</p>
+
+<pre><code>sudo service httpd start
+</code></pre>
+
+<br>
+
+
+<p>Step.3: Installing MySQL:</p>
+
+<pre><code>sudo yum install mysql mysql-server
+</code></pre>
+
+<p>To Start MySQL</p>
+
+<pre><code>sudo service mysqld start
+</code></pre>
+
+<br>
+
+
+<p>Step.4: Installing PHP</p>
+
+<pre><code>sudo yum install php php-mysql
+</code></pre>
+
+<br>
+
+
+<p>To check whether LAMP is correctly installed and working make a file <strong>info.php</strong> inside the /var/www/html directory</p>
+
+<pre><code>sudo vi /var/www/html/info.php
+</code></pre>
+
+<p>and paste the following lines into it and save it</p>
+
+<pre><code>&lt;?php
+phpinfo();
+?&gt;
+</code></pre>
+
+<p>Now restart the Apache</p>
+
+<pre><code>sudo service httpd restart
+</code></pre>
+
+<p>Now in the browser enter the URL of your info.php file i.e</p>
+
+<pre><code>http://localhost/info.php
+</code></pre>
+
+<p>You should see the info page on the browser.</p>
+
+<p>The LAMP stack has, now, been installed on your system.</p>
+
+<br>
+
+
+<p>If you want to configure the root password for MySQL run the following command</p>
+
+<pre><code>sudo /usr/bin/mysql_secure_installation
+</code></pre>
+
+<p>This prompts you to enter the current root password, just leave it blank by pressing enter as you have just installed MySQL and no root password has been set yet.
+Next the prompt asks you whether you want to set a root password, enter y and follow the instructions.
+In the next few steps it will ask you the following questions</p>
+
+<pre><code>Remove anonymous users? [Y/n]
+Disallow root login remotely? [Y/n]
+Remove test database and access to it? [Y/n]
+Reload privilege tables now? [Y/n]
+</code></pre>
+
+<p>Just enter Y for all the questions.
+If all done, you have successfully setup new root password and your MySQL installation is now secure.</p>
+
+<p>Now restart the Apache and Mysql services</p>
+
+<pre><code>sudo service httpd restart
+sudo service mysqld restart
+</code></pre>
+
+<br>
+
+
+<p>To run the services on the startup run the following commands(PHP automatically starts when tha Apache starts):</p>
+
+<pre><code>sudo chkconfig httpd on
+sudo chkconfig mysqld on
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The simplest YUM guide]]></title>
@@ -212,7 +325,92 @@ But before you can actually use your Hotspot network to access the internet you 
     <link href="http://rajpushkar.github.io/blog/2014/04/04/how-to-install-lamp-on-ubuntu/"/>
     <updated>2014-04-04T00:45:00+05:30</updated>
     <id>http://rajpushkar.github.io/blog/2014/04/04/how-to-install-lamp-on-ubuntu</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>To install LAMP on Ubuntu just follow the following easy steps.</p>
+
+<p>Step1. Install Apache</p>
+
+<pre><code>sudo apt-get install apache2
+</code></pre>
+
+<p>To verify that apache has been successfully installed or not type in the URL bar of the browser &ldquo;localhost&rdquo; and in the output you should see something like:</p>
+
+<pre><code>It works!
+This is the default web page for this server.
+The web server software is running but no content has been added, yet.
+</code></pre>
+
+<br>
+
+
+<p>Step2. Install MySQL on the server</p>
+
+<pre><code>sudo apt-get install mysql-server
+</code></pre>
+
+<p>Now start the MySQL service</p>
+
+<pre><code>sudo service mysql start
+</code></pre>
+
+<br>
+
+
+<p>Step3. Install PHP</p>
+
+<pre><code>sudo apt-get install php5 libapache2-mod-php5
+</code></pre>
+
+<p>Now to test the PHP installation make a test.php file in /var/www/ directory and copy the following contents in the file and save it</p>
+
+<pre><code>&lt;?php
+phpinfo();
+?&gt;
+</code></pre>
+
+<p>Now restart the apache service</p>
+
+<pre><code>sudo service apache2 restart
+</code></pre>
+
+<p>and open a browser and type in the URL bar</p>
+
+<pre><code>localhost/test.php
+</code></pre>
+
+<p>which should display the information page of the PHP installed on the system.</p>
+
+<br>
+
+
+<p>Step4. Now if you want to install PHPMyAdmin</p>
+
+<pre><code>sudo apt-get install phpmyadmin
+</code></pre>
+
+<p>Configure it as follows:</p>
+
+<pre><code>*Select apache2 as the web-server
+*Choose yes when asked for whether you want to configure the database for phpmyadmin with dbconfig-common
+* Enter your MySQL password when prompted
+* Enter the password that you want to use to log into phpmyadmin
+</code></pre>
+
+<p>After the installation completes add the phpmyadmin to the apache2.conf file as follows</p>
+
+<pre><code>sudo vim /etc/apache2/apache2.conf
+</code></pre>
+
+<p>and add the following line in the file</p>
+
+<pre><code>Include /etc/phpmyadmin/apache.conf
+</code></pre>
+
+<p>Now restart apache</p>
+
+<pre><code>sudo service apache2 restart
+</code></pre>
+
+<p>and you are all done!</p>
 ]]></content>
   </entry>
   
@@ -576,41 +774,6 @@ sudo ./AdobeAIRInstaller.bin
 <dd>The device borrows existing wireless internet and broadcasts it using a different network name(SSID) and password</dd></p>
 
 <p><img src="http://rajpushkar.github.io/images/bridge.jpeg" width="400" height="400" title="Bridge-Mode &#34;Image Describing the Bridge Mode&#34;" alt="Bridge-Mode &#34;Image Describing the Bridge Mode&#34;"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[What is Octopress??]]></title>
-    <link href="http://rajpushkar.github.io/blog/2013/06/02/what-is-octopress/"/>
-    <updated>2013-06-02T18:19:00+05:30</updated>
-    <id>http://rajpushkar.github.io/blog/2013/06/02/what-is-octopress</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Introduction to the Python]]></title>
-    <link href="http://rajpushkar.github.io/blog/2013/06/02/introduction-to-the-python/"/>
-    <updated>2013-06-02T03:05:00+05:30</updated>
-    <id>http://rajpushkar.github.io/blog/2013/06/02/introduction-to-the-python</id>
-    <content type="html"><![CDATA[<p>Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs.</p>
-
-<p>Python is a remarkably powerful dynamic programming language that is used in a wide variety of application domains. Python is often compared to Tcl, Perl, Ruby, Scheme or Java. Some of its key distinguishing features include:</p>
-
-<p>&mdash;very clear, readable syntax
-&mdash;strong introspection capabilities
-&mdash;intuitive object orientation
-&mdash;natural expression of procedural code
-&mdash;full modularity, supporting hierarchical packages
-&mdash;exception-based error handling
-&mdash;very high level dynamic data types
-&mdash;extensive standard libraries and third party modules for virtually every task
-&mdash;extensions and modules easily written in C, C++ (or Java for Jython, or .NET languages for IronPython)
-&mdash;embeddable within applications as a scripting interface</p>
-
-<p>The Python implementation is under an open source license that makes it freely usable and distributable, even for commercial use. The Python license is administered by the Python Software Foundation.</p>
-
-<p>You can read more on www.python.org</p>
 ]]></content>
   </entry>
   

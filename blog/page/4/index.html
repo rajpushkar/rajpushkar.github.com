@@ -6,7 +6,7 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Sep 26th, 2013 Tags: Many of us face the problem to boot to ubuntu when we install Windows over it as the system directly boots to &hellip;">
+	<meta name="description" content="Published on: Sep 27th, 2013 Tags: Hi all! I have been using octopress blog for a couple of months now. I find it very interesting to work with. But &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,6 +84,144 @@
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2013/09/27/how-to-operate-octopress-blog-from-multiple-places/">
+		
+			How to Operate Octopress Blog From Multiple Places</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-27T17:20:00+05:30" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>Hi all! I have been using octopress blog for a couple of months now. I find it very interesting to work with. But a problem I used to face with Octopress is that I was unable to operate it from multiple machines. The complete setup was on my laptop and if I want to post anything onto the blog from a system in my institute, I can&rsquo;t.
+As long as my laptop was serving my purpose I didn&rsquo;t bother but one day my hard-disk crashed and then I was left with no other option then finding a solution to operate the blog from multiple places.</p>
+
+<br>
+
+
+<p>I had the basic understanding as to what does different folders inside the octopress folder actually mean.</p>
+
+<br>
+
+
+<p>The octopress repository cotains two branches: <strong>Source</strong> and <strong>Master</strong>
+The Source branch contains the files necessary to generate the blog and the actual blog is contained in the Master branch.
+While configuring the blog initially the source branch is cloned into the folder named octopress and the files of the actual blog are cloned into the sub-folder named _deploy.</p>
+
+<br>
+
+
+<p>All the files and folders are pushed to the Source branch when we run the <strong>git push origin source</strong> command on terminal except the <strong>_deploy</strong> folder which contains the files of the actual blog and are pushed to master branch automatically when we run <strong>rake deploy</strong> command.</p>
+
+<br>
+
+
+<p>So the steps that I followed are as follows:</p>
+
+<h2>Step.1</h2>
+
+<p>I Cloned the Source branch to a local directory named Octopress:</p>
+
+<pre><code>git clone -b source git@github.com:username/username.github.com.git octopress
+</code></pre>
+
+<h2>Step.2</h2>
+
+<p>CD to the octopress directory just created and cloned the master branch into a directory named _deploy:</p>
+
+<pre><code>git clone git@github.com:username/username.github.com.git _deploy
+</code></pre>
+
+<h2>Step.3</h2>
+
+<p>Then I installed ruby as follows:</p>
+
+<pre><code>curl -L https://get.rvm.io | bash -s stable --ruby
+rvm install 1.9.3
+rvm use 1.9.3
+rvm rubygems latest
+</code></pre>
+
+<p>after this I configured everything according to the octopress guidelines:</p>
+
+<pre><code>gem install bundler
+bundle install
+rake setup_github_pages
+</code></pre>
+
+<p>This prompted me to enter read/write URL for my blog</p>
+
+<pre><code>Enter the read/write url for your repository
+(For example, 'git@github.com:username/username.github.com)
+</code></pre>
+
+<p>Here I have omitted the step <strong>rake install</strong> because it installs the default theme to the octopress and there was already a theme installed on my blog. If you want to install the default octopress theme then run the command <strong>rake install</strong> before running <strong>rake setup_github_pages</strong></p>
+
+<br>
+
+
+<p>That&rsquo;s it. Now I have a complete copy of my octopress blog.
+Now I can do whatever I like as i used to do before loosing my blog.</p>
+
+<p><strong>If you want to operate your blog from multiple places</strong> you just need to setup a copy of your blog locally on all the machines and then before making changes from any machine do the following:</p>
+
+<br>
+
+
+<p>Go to the <strong>octopress</strong> directory and pull the <strong>source</strong> branch:</p>
+
+<pre><code>cd /path/to/octopress/directory
+git pull origin source
+</code></pre>
+
+<p>Go to the <strong>_deploy</strong> directory and pull the <strong>master</strong> branch:</p>
+
+<pre><code>cd _deploy
+git pull origin master
+</code></pre>
+
+<p>Make changes and push:</p>
+
+<pre><code>git add .
+git commit -m "your message"
+git push origin source
+</code></pre>
+
+<p>Deploy:</p>
+
+<pre><code>rake generate
+rake deploy
+</code></pre>
+
+<p>That&rsquo;s it!</p>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2013/09/26/grub-recovery-after-installing-windows/">
 		
 			Grub Recovery After Installing Windows</a>
@@ -138,118 +276,6 @@ sudo apt-get install boot-repair
 
 <p>Now boot-repair menu will appear on the screen click on the <strong>Recommended Repair</strong>, wiat for the process to complete and restart your computer.<br>
 Whoa! The GRUB menu has been successfully recovered.</p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/06/21/prezionubuntu/">
-		
-			How to Install Prezi on Ubuntu</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-21T18:08:00+05:30" pubdate data-updated="true">Jun 21<span>st</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<h3>First of all install Adobe-Air.</h3>
-
-
-<p>Step.1: Download <a href="http://airdownload.adobe.com/air/lin/download/2.6/AdobeAIRInstaller.bin">Adobe-Air-2.6</a></p>
-
-<br>
-
-
-<p>Step.2: Download <a href="http://jeffhendricks.net/getlibs-all.deb">getlibs-all.deb</a></p>
-
-<br>
-
-
-<p>Step.3: Install it. In terminal cd, to the directory you stored &ldquo;getlibs-all.deb&rdquo; and run the following command.</p>
-
-<pre><code>sudo dpkg -i getlibs-all.deb
-</code></pre>
-
-<p>It is useful for finding 32-bit libraries for 64-bit system.</p>
-
-<br>
-
-
-<p>Step.4: Now install libhal-storage1, lib32nss-mdns, and libgnome-keyring0 if it&rsquo;s not installed.</p>
-
-<pre><code>sudo apt-get install libhal-storage1 libgnome-keyring0 lib32nss-mdns
-</code></pre>
-
-<br>
-
-
-<p>Step.5: Now, we need to install all the missing 32-bit libraries that it will need.</p>
-
-<pre><code>sudo getlibs -l libhal-storage.so.1
-sudo getlibs -l libgnome-keyring.so.0.1.1
-</code></pre>
-
-<br>
-
-
-<p>Step.6: Now you need to link a couple of libraries.</p>
-
-<pre><code>sudo ln -s /usr/lib/i386-linux-gnu/libgnome-keyring.so.0 /usr/lib/libgnome-keyring.so.0
-</code></pre>
-
-<br>
-
-
-<p>Step.7: Now run the actual Air installer. In terminal cd, to the directory you stored &ldquo;AdobeAIRInstaller.bin&rdquo; and run the following command.</p>
-
-<pre><code>chmod +x ./AdobeAIRInstaller.bin
-sudo ./AdobeAIRInstaller.bin
-</code></pre>
-
-<p>This starts installing the Adobe-AIR on your system.</p>
-
-<br>
-
-
-
-
-<h3>Now install Prezi</h3>
-
-
-<p>Step.1: Download the <a href="http://cdn01.prezi.com/prezi/desktop/PreziDesktop_3.090.air">Prezi</a> package.</p>
-
-<br>
-
-
-<p>Step.2: Open Adobe-Air in your computer and it will prompt you to choose a package.</p>
-
-<br>
-
-
-<p>Step.3: Select the downloaded &ldquo;.air&rdquo; package that you just downloaded and you are all set to install Prezi.</p>
 
 		
 		

@@ -6,9 +6,7 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Jun 7th, 2013 Tags: There are five modes in which the router can be configured: Wireless Access-Point(AP) Mode
-Client Mode
-Repeater &hellip;">
+	<meta name="description" content="Published on: Jun 21st, 2013 Tags: First of all install Adobe-Air. Step.1: Download Adobe-Air-2.6 Step.2: Download getlibs-all.deb Step.3: Install &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,6 +84,118 @@ Repeater &hellip;">
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2013/06/21/prezionubuntu/">
+		
+			How to Install Prezi on Ubuntu</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-21T18:08:00+05:30" pubdate data-updated="true">Jun 21<span>st</span>, 2013</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<h3>First of all install Adobe-Air.</h3>
+
+
+<p>Step.1: Download <a href="http://airdownload.adobe.com/air/lin/download/2.6/AdobeAIRInstaller.bin">Adobe-Air-2.6</a></p>
+
+<br>
+
+
+<p>Step.2: Download <a href="http://jeffhendricks.net/getlibs-all.deb">getlibs-all.deb</a></p>
+
+<br>
+
+
+<p>Step.3: Install it. In terminal cd, to the directory you stored &ldquo;getlibs-all.deb&rdquo; and run the following command.</p>
+
+<pre><code>sudo dpkg -i getlibs-all.deb
+</code></pre>
+
+<p>It is useful for finding 32-bit libraries for 64-bit system.</p>
+
+<br>
+
+
+<p>Step.4: Now install libhal-storage1, lib32nss-mdns, and libgnome-keyring0 if it&rsquo;s not installed.</p>
+
+<pre><code>sudo apt-get install libhal-storage1 libgnome-keyring0 lib32nss-mdns
+</code></pre>
+
+<br>
+
+
+<p>Step.5: Now, we need to install all the missing 32-bit libraries that it will need.</p>
+
+<pre><code>sudo getlibs -l libhal-storage.so.1
+sudo getlibs -l libgnome-keyring.so.0.1.1
+</code></pre>
+
+<br>
+
+
+<p>Step.6: Now you need to link a couple of libraries.</p>
+
+<pre><code>sudo ln -s /usr/lib/i386-linux-gnu/libgnome-keyring.so.0 /usr/lib/libgnome-keyring.so.0
+</code></pre>
+
+<br>
+
+
+<p>Step.7: Now run the actual Air installer. In terminal cd, to the directory you stored &ldquo;AdobeAIRInstaller.bin&rdquo; and run the following command.</p>
+
+<pre><code>chmod +x ./AdobeAIRInstaller.bin
+sudo ./AdobeAIRInstaller.bin
+</code></pre>
+
+<p>This starts installing the Adobe-AIR on your system.</p>
+
+<br>
+
+
+
+
+<h3>Now install Prezi</h3>
+
+
+<p>Step.1: Download the <a href="http://cdn01.prezi.com/prezi/desktop/PreziDesktop_3.090.air">Prezi</a> package.</p>
+
+<br>
+
+
+<p>Step.2: Open Adobe-Air in your computer and it will prompt you to choose a package.</p>
+
+<br>
+
+
+<p>Step.3: Select the downloaded &ldquo;.air&rdquo; package that you just downloaded and you are all set to install Prezi.</p>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2013/06/07/tplink/">
 		
 			TP-Link TL-WR702N Router Configuration Settings</a>
@@ -156,44 +266,6 @@ Repeater &hellip;">
 <dd>The device borrows existing wireless internet and broadcasts it using a different network name(SSID) and password</dd></p>
 
 <p><img src="/images/bridge.jpeg" width="400" height="400" title="Bridge-Mode &#34;Image Describing the Bridge Mode&#34;" alt="Bridge-Mode &#34;Image Describing the Bridge Mode&#34;"></p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/06/02/what-is-octopress/">
-		
-			What Is Octopress??</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-02T18:19:00+05:30" pubdate data-updated="true">Jun 2<span>nd</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		
 
 		
 		
