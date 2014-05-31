@@ -6,7 +6,7 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Sep 27th, 2013 Tags: Hi all! I have been using octopress blog for a couple of months now. I find it very interesting to work with. But &hellip;">
+	<meta name="description" content="Published on: Sep 27th, 2013 Tags: Hi! Today we were conducting the ICT Training at IIC, UDSC which aims at promoting the use of Open-Source &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,86 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/09/27/diacriticalwriting/">
+		
+			Libre Office Writer: How to Write Letters With Diacritical Marks</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-27T21:07:00+05:30" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>Hi! Today we were conducting the ICT Training at <a href="http://iic.ac.in">IIC, UDSC</a> which aims at promoting the use of Open-Source Softwares in the University amongst the teachers as well as students. We were giving the Faculty hands-on with Ubuntu and,  since, they were new to Ubuntu so many questions were shot on us and one out of them was how to write characters with <strong>diacritical marks(e.g ë, õ)</strong> in <strong>LibreOffice Writer</strong>. I found the question interesting as I got a new thing to explore. So I started searching for the solution and within few minutes I found one.</p>
+
+<br>
+
+
+<p>I am demonstrating the procedure below:</p>
+
+<br>
+
+
+<p>First of all go <a href="http://extensions.services.openoffice.org/fr/project/ComposeSpecialCharacters">here</a> and download the ComposeSpecialCharacter extension or directly download it from <a href="http://extensions.services.openoffice.org/fr/download/4646">here</a></p>
+
+<br>
+
+
+<p>Now Open the LibreOffice Writer and go to the <i>tools</i> tab and select <i>Extension manager.</i>
+<img src="/images/Snapshot1.png"></p>
+
+<br>
+
+
+<p>The following window will appear which prompts you to add an extension.
+<img src="/images/Snapshot2.png">
+Click on <i>Add</i> and go to the directory where the file has been downloaded, select the file and click <i>Open</i> as demonstrated below.
+<img src="/images/Snapshot3.png">
+Now the <i>Extension Software License Agreement</i> Window will appear you will see the <i>Accept</i> button is disabled. Scroll till end and it will become active, click Accept and close the next window that appears.
+<img src="/images/Snapshot4.png">
+<img src="/images/Snapshot5.png">
+Now close and relaunch the LibreOffice Writer and you can see that a new option named <i>Compose Character</i> appears under the <i>Insert</i> tab.
+<img src="/images/Snapshot6.png">
+On clicking the compose character option you will see a window(shown below) appearing on your screen that displays the information on how to use the keyboard shortcuts to enter the special characters on the editor. But before using the shortcuts you need to set the CSC(Compose Special Character) Shortcut key-combination.
+<img src="/images/Snapshot7.png">
+Click on the CSC Shortcut tab and you will be greeted with a new window that prompts you to set a key-combination for composing special characetrs.
+<img src="/images/Snapshot8.png">
+Here, as you can see, I have chosen the <strong>alt+F3</strong> key-combination, you can choose any combination like <strong>shift+F2, alt+ctrl+m, ctrl+g</strong> but make sure the combination you choose should not conflict with any other shortcut already defined for the editor.
+Click <i>OK</i> and also on the next two windows that appear click <i>OK</i>
+<img src="/images/Snapshot9.png">
+<img src="/images/Snapshot10.png">
+Now the following window shows you the key-pair to use for writing the words with diacritical marks.
+<img src="/images/Snapshot11.png">
+Suppose you want to write &ldquo;Ø&rdquo; then as shown first you have to type &ldquo;O/&rdquo; and then you need to press the CSC key-combination set by you, which in my case is <strong>alt+F3</strong>
+Simillarly to type any other character just look for its key-pair value and then afte typing in the key-pair value press your CSC key and you are done.
+As simple as that!</p>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -208,74 +288,6 @@ rake deploy
 </code></pre>
 
 <p>That&rsquo;s it!</p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/09/26/grub-recovery-after-installing-windows/">
-		
-			Grub Recovery After Installing Windows</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-26T02:03:00+05:30" pubdate data-updated="true">Sep 26<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>Many of us face the problem to boot to ubuntu when we install Windows over it as the system directly boots to windows on startup.
-So what to do this in case?How to recover the grub so that we can boot to the OS we want and not what the system wants.
-Here is a simple solution for the problem.</p>
-
-<h2>Step.1</h2>
-
-<p>Insert the Ubuntu Live CD, reboot your computer and at startup set your system to boot from CD and start a live session.<br>
-Live USB can also be used for this purpose.</p>
-
-<h2>Step.2</h2>
-
-<p>Open Terminal. Make sure you are connected to the internet.
-Now install boot-repair following the below mentioned steps:</p>
-
-<pre><code>sudo add-apt-repository ppa:yannubuntu/boot-repair
-sudo apt-get update
-sudo apt-get install boot-repair
-</code></pre>
-
-<p>The boot-repair has successfully been installed to your system now.</p>
-
-<h2>Step.3</h2>
-
-<p>Now run boot-repair. For those who do not know how to run a program in Ubuntu, press super key(windows key is called super key in Ubuntu), a dash menu will appear, type-in boot-repair and run the program.</p>
-
-<p>You can also run it by simply running the command <strong>&lt;boot-repair &amp;></strong> in the terminal.</p>
-
-<h2>Step.4</h2>
-
-<p>Now boot-repair menu will appear on the screen click on the <strong>Recommended Repair</strong>, wiat for the process to complete and restart your computer.<br>
-Whoa! The GRUB menu has been successfully recovered.</p>
 
 		
 		

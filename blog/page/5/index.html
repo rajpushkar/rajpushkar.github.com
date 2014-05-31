@@ -6,7 +6,7 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Jun 21st, 2013 Tags: First of all install Adobe-Air. Step.1: Download Adobe-Air-2.6 Step.2: Download getlibs-all.deb Step.3: Install &hellip;">
+	<meta name="description" content="Published on: Sep 26th, 2013 Tags: Many of us face the problem to boot to ubuntu when we install Windows over it as the system directly boots to &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,74 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/09/26/grub-recovery-after-installing-windows/">
+		
+			Grub Recovery After Installing Windows</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-26T02:03:00+05:30" pubdate data-updated="true">Sep 26<span>th</span>, 2013</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>Many of us face the problem to boot to ubuntu when we install Windows over it as the system directly boots to windows on startup.
+So what to do this in case?How to recover the grub so that we can boot to the OS we want and not what the system wants.
+Here is a simple solution for the problem.</p>
+
+<h2>Step.1</h2>
+
+<p>Insert the Ubuntu Live CD, reboot your computer and at startup set your system to boot from CD and start a live session.<br>
+Live USB can also be used for this purpose.</p>
+
+<h2>Step.2</h2>
+
+<p>Open Terminal. Make sure you are connected to the internet.
+Now install boot-repair following the below mentioned steps:</p>
+
+<pre><code>sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo apt-get update
+sudo apt-get install boot-repair
+</code></pre>
+
+<p>The boot-repair has successfully been installed to your system now.</p>
+
+<h2>Step.3</h2>
+
+<p>Now run boot-repair. For those who do not know how to run a program in Ubuntu, press super key(windows key is called super key in Ubuntu), a dash menu will appear, type-in boot-repair and run the program.</p>
+
+<p>You can also run it by simply running the command <strong>&lt;boot-repair &amp;></strong> in the terminal.</p>
+
+<h2>Step.4</h2>
+
+<p>Now boot-repair menu will appear on the screen click on the <strong>Recommended Repair</strong>, wiat for the process to complete and restart your computer.<br>
+Whoa! The GRUB menu has been successfully recovered.</p>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -182,90 +250,6 @@ sudo ./AdobeAIRInstaller.bin
 
 
 <p>Step.3: Select the downloaded &ldquo;.air&rdquo; package that you just downloaded and you are all set to install Prezi.</p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/06/07/tplink/">
-		
-			TP-Link TL-WR702N Router Configuration Settings</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-07T16:26:00+05:30" pubdate data-updated="true">Jun 7<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>There are five modes in which the router can be configured:</p>
-
-<ol>
-<li>Wireless Access-Point(AP) Mode
-<li>Client Mode
-<li>Repeater Mode
-<li>Router Mode
-<li>Bridge Mode
-</ol>
-
-
-<p><strong><em>Wireless Access Point(AP) Mode:</em></strong>
-<dd>The router is connected to a wired network and transforms the wired internet access into wireless so that multiple devices can share the internet.</dd></p>
-
-<p><img src="/images/apmode.jpeg" width="400" height="400" title="AP-Mode &#34;Image Describing the AP Mode&#34;" alt="AP-Mode &#34;Image Describing the AP Mode&#34;"></p>
-
-<br>
-
-
-<p><strong><em>Client Mode:</em></strong>
-<dd>The device is connected to another device via ethernet card and acts as an adapter to send/receive the wireless signal from your wireless network</dd></p>
-
-<p><img src="/images/client.jpeg" width="400" height="400" title="Client-Mode &#34;Image Describing the Client Mode&#34;" alt="Client-Mode &#34;Image Describing the Client Mode&#34;"></p>
-
-<br>
-
-
-<p><strong><em>Repeater Mode:</em></strong>
-<dd>The device copies and reinforces the existing wireless signal to extend the coverage of the signal. So the network name(SSID) and password don&rsquo;t change. This mode is especially useful for a large space to eliminate signal-blind corners.</dd></p>
-
-<p><img src="/images/repeater.jpeg" width="400" height="400" title="Repeater-Mode &#34;Image Describing the Repeater Mode&#34;" alt="Repeater-Mode &#34;Image Describing the Repeater Mode&#34;"></p>
-
-<br>
-
-
-<p><strong><em>Router Mode:</em></strong>
-<dd>The device is connected to a DSL or cable modem and works as a Regular Wireless Router</dd></p>
-
-<p><img src="/images/router.jpeg" width="400" height="400" title="Router-Mode &#34;Image Describing the Router Mode&#34;" alt="Router-Mode &#34;Image Describing the Router Mode&#34;"></p>
-
-<br>
-
-
-<p><strong><em>Bridge Mode:</em></strong>
-<dd>The device borrows existing wireless internet and broadcasts it using a different network name(SSID) and password</dd></p>
-
-<p><img src="/images/bridge.jpeg" width="400" height="400" title="Bridge-Mode &#34;Image Describing the Bridge Mode&#34;" alt="Bridge-Mode &#34;Image Describing the Bridge Mode&#34;"></p>
 
 		
 		

@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Pushkar Raj's Blog</title>
+	<title>Python code to find countries your packet is routing through - Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: May 29th, 2014 Tags: It is a simple program in Python which makes use of the traceroute utility along with the GeoIP database to find &hellip;">
+	<meta name="description" content="It is a simple program in Python which makes use of the traceroute utility along with the GeoIP database to find out the names of the countries &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,36 +78,9 @@
 <div id="toload">
 <!-- begin toload --> 
     <div id="content" class="inner">
-        
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/05/29/traceroute/">
-		
-			Python Code to Find Countries Your Packet Is Routing Through</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-29T09:49:00+05:30" pubdate data-updated="true">May 29<span>th</span>, 2014</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>It is a simple program in <strong>Python</strong> which makes use of the <strong>traceroute</strong> utility along with the <strong>GeoIP database</strong> to find out the names of the countries through which a packet is routing.</p>
+        <article class="post">
+	<h2 class="title">Python Code to Find Countries Your Packet Is Routing Through</h2>
+	<div class="entry-content"><p>It is a simple program in <strong>Python</strong> which makes use of the <strong>traceroute</strong> utility along with the <strong>GeoIP database</strong> to find out the names of the countries through which a packet is routing.</p>
 
 <br>
 
@@ -215,165 +188,26 @@ if __name__ == "__main__":
 </code></pre>
 
 <p>Provide any domainname without &lt;> and you will see the required output</p>
-
-		
-		
-	</div>
+</div>
 
 <div class="meta">
 	
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/05/25/lamp-on-fedora/">
-		
-			LAMP on Fedora</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-25T22:29:00+05:30" pubdate data-updated="true">May 25<span>th</span>, 2014</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>To install LAMP on fedora just follow the following steps and within few minutes you will be ready with the LAMP stack on your system.</p>
-
-<p>Step.1: We must install the updates first:</p>
-
-<pre><code>sudo yum update
-</code></pre>
-
-<br>    
-
-
-<p>Step.2: Installing Apache:</p>
-
-<pre><code>sudo yum install httpd
-</code></pre>
-
-<p>The Apache service can be started by running</p>
-
-<pre><code>sudo service httpd start
-</code></pre>
-
-<br>
-
-
-<p>Step.3: Installing MySQL:</p>
-
-<pre><code>sudo yum install mysql mysql-server
-</code></pre>
-
-<p>To Start MySQL</p>
-
-<pre><code>sudo service mysqld start
-</code></pre>
-
-<br>
-
-
-<p>Step.4: Installing PHP</p>
-
-<pre><code>sudo yum install php php-mysql
-</code></pre>
-
-<br>
-
-
-<p>To check whether LAMP is correctly installed and working make a file <strong>info.php</strong> inside the /var/www/html directory</p>
-
-<pre><code>sudo vi /var/www/html/info.php
-</code></pre>
-
-<p>and paste the following lines into it and save it</p>
-
-<pre><code>&lt;?php
-phpinfo();
-?&gt;
-</code></pre>
-
-<p>Now restart the Apache</p>
-
-<pre><code>sudo service httpd restart
-</code></pre>
-
-<p>Now in the browser enter the URL of your info.php file i.e</p>
-
-<pre><code>http://localhost/info.php
-</code></pre>
-
-<p>You should see the info page on the browser.</p>
-
-<p>The LAMP stack has, now, been installed on your system.</p>
-
-<br>
-
-
-<p>If you want to configure the root password for MySQL run the following command</p>
-
-<pre><code>sudo /usr/bin/mysql_secure_installation
-</code></pre>
-
-<p>This prompts you to enter the current root password, just leave it blank by pressing enter as you have just installed MySQL and no root password has been set yet.
-Next the prompt asks you whether you want to set a root password, enter y and follow the instructions.
-In the next few steps it will ask you the following questions</p>
-
-<pre><code>Remove anonymous users? [Y/n]
-Disallow root login remotely? [Y/n]
-Remove test database and access to it? [Y/n]
-Reload privilege tables now? [Y/n]
-</code></pre>
-
-<p>Just enter Y for all the questions.
-If all done, you have successfully setup new root password and your MySQL installation is now secure.</p>
-
-<p>Now restart the Apache and Mysql services</p>
-
-<pre><code>sudo service httpd restart
-sudo service mysqld restart
-</code></pre>
-
-<br>
-
-
-<p>To run the services on the startup run the following commands(PHP automatically starts when tha Apache starts):</p>
-
-<pre><code>sudo chkconfig httpd on
-sudo chkconfig mysqld on
-</code></pre>
-
-		
-		
-	</div>
-
-<div class="meta">
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-</article>
 
-<nav id="pagenavi">
-    
-    
-        <a href="/blog/page/2/" class="next">Next</a>
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
+
 
     </div>
     <footer id="footer">

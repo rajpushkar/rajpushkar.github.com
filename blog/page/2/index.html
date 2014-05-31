@@ -6,7 +6,8 @@
 	<title>Pushkar Raj's Blog</title>
     <meta name="author" content="Mehandiratta">
     
-	<meta name="description" content="Published on: Apr 7th, 2014 Tags: Hi! This post will tell you how to create a WiFI hotspot from your Windows 7 Laptop/PC. It is very easy to set up &hellip;">
+	<meta name="description" content="Published on: Apr 13th, 2014 Tags: Hi! This post will make you familiar with the YUM utility provided with Fedora.
+You can easily download, install &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +80,166 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/04/13/the-simplest-yum-guide/">
+		
+			The Simplest YUM Guide</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-13T02:20:00+05:30" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time></div>
+      <div class="tags">Tags: 
+
+</div>
+    </div>
+		<p>Hi! This post will make you familiar with the YUM utility provided with Fedora.
+You can easily download, install or remove any package/module after going through this easy YUM guide.
+Taking you directly to the commands, If you want to search for a module:</p>
+
+<pre><code>yum search &lt;module name&gt;
+</code></pre>
+
+<p>To get information about a module:</p>
+
+<pre><code>yum info &lt;module name&gt;
+</code></pre>
+
+<p>To install a module:</p>
+
+<pre><code>sudo yum install &lt;module name&gt;
+</code></pre>
+
+<p>To remove a module:</p>
+
+<pre><code>sudo yum remove &lt;module name&gt;
+</code></pre>
+
+<p>To check for updates:</p>
+
+<pre><code>yum check update
+</code></pre>
+
+<p>To install updates;</p>
+
+<pre><code>sudo yum update
+</code></pre>
+
+<p>To update a single module:</p>
+
+<pre><code>yum update &lt;module name&gt;
+</code></pre>
+
+<p>excluding a module from being updated:</p>
+
+<pre><code>yum --exclude=package &lt;module name&gt; updated
+</code></pre>
+
+<p>To find out the dependencies of a module</p>
+
+<pre><code>yum deplist &lt;module name&gt;
+</code></pre>
+
+<br>
+
+
+<p>To uninstall a module:</p>
+
+<pre><code>yum remove &lt;module name&gt;
+or
+yum erase &lt;module name&gt;
+</code></pre>
+
+<p>To search for a module which can be directly installed using YUM</p>
+
+<pre><code>yum list | grep &lt;module name&gt;
+</code></pre>
+
+<p>To find whether a module has been installed or not:</p>
+
+<pre><code>yum list installed | grep &lt;module name&gt;
+</code></pre>
+
+<p>If in the output you see the package listed then it is installed else there will be no output.</p>
+
+<br>
+
+
+<br>
+
+
+<p>To install a yum group. Say I want to install the group of editors</p>
+
+<pre><code>yum groupinstall editors
+</code></pre>
+
+<p>To remove the editors yum group</p>
+
+<pre><code>yum groupremove editors
+</code></pre>
+
+<p>To update a yum group:</p>
+
+<pre><code>yum groupupdate &lt;group name&gt;
+</code></pre>
+
+<p>To list packages in a YUM group:</p>
+
+<pre><code>yum groupinfo &lt;group-name&gt;
+</code></pre>
+
+<p>To list YUM groups:</p>
+
+<pre><code>yum grouplist | less 
+</code></pre>
+
+<br>
+
+
+<br>
+
+
+<p>To know the kernel-images currently installed:</p>
+
+<pre><code>rpm -q kernel
+</code></pre>
+
+<p>To remove old kernels:</p>
+
+<pre><code>sudo yum remove kernel
+</code></pre>
+
+<p>Fedora retains the three latest kernels to ensure that there is always a working kernel installed, in case the latest kernel breaks something.
+The limit can be changed by changing the value of &lsquo;installonly_limit&rsquo; in the &lsquo;/etc/yum.conf&rsquo; file.</p>
+
+<p>To remove a specific kernel:</p>
+
+<pre><code>sudo yum remove &lt;kernel package&gt;
+</code></pre>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -162,129 +323,6 @@ But before you can actually use your Hotspot network to access the internet you 
 
 <pre><code>netsh wlan refresh hostednetwork &lt;newpassword&gt;
 </code></pre>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/04/04/how-to-install-lamp-on-ubuntu/">
-		
-			How to Install LAMP on Ubuntu</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-04T00:45:00+05:30" pubdate data-updated="true">Apr 4<span>th</span>, 2014</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		<p>To install LAMP on Ubuntu just follow the following easy steps.</p>
-
-<p>Step1. Install Apache</p>
-
-<pre><code>sudo apt-get install apache2
-</code></pre>
-
-<p>To verify that apache has been successfully installed or not type in the URL bar of the browser &ldquo;localhost&rdquo; and in the output you should see something like:</p>
-
-<pre><code>It works!
-This is the default web page for this server.
-The web server software is running but no content has been added, yet.
-</code></pre>
-
-<br>
-
-
-<p>Step2. Install MySQL on the server</p>
-
-<pre><code>sudo apt-get install mysql-server
-</code></pre>
-
-<p>Now start the MySQL service</p>
-
-<pre><code>sudo service mysql start
-</code></pre>
-
-<br>
-
-
-<p>Step3. Install PHP</p>
-
-<pre><code>sudo apt-get install php5 libapache2-mod-php5
-</code></pre>
-
-<p>Now to test the PHP installation make a test.php file in /var/www/ directory and copy the following contents in the file and save it</p>
-
-<pre><code>&lt;?php
-phpinfo();
-?&gt;
-</code></pre>
-
-<p>Now restart the apache service</p>
-
-<pre><code>sudo service apache2 restart
-</code></pre>
-
-<p>and open a browser and type in the URL bar</p>
-
-<pre><code>localhost/test.php
-</code></pre>
-
-<p>which should display the information page of the PHP installed on the system.</p>
-
-<br>
-
-
-<p>Step4. Now if you want to install PHPMyAdmin</p>
-
-<pre><code>sudo apt-get install phpmyadmin
-</code></pre>
-
-<p>Configure it as follows:</p>
-
-<pre><code>*Select apache2 as the web-server
-*Choose yes when asked for whether you want to configure the database for phpmyadmin with dbconfig-common
-* Enter your MySQL password when prompted
-* Enter the password that you want to use to log into phpmyadmin
-</code></pre>
-
-<p>After the installation completes add the phpmyadmin to the apache2.conf file as follows</p>
-
-<pre><code>sudo vim /etc/apache2/apache2.conf
-</code></pre>
-
-<p>and add the following line in the file</p>
-
-<pre><code>Include /etc/phpmyadmin/apache.conf
-</code></pre>
-
-<p>Now restart apache</p>
-
-<pre><code>sudo service apache2 restart
-</code></pre>
-
-<p>and you are all done!</p>
 
 		
 		
