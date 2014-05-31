@@ -9,7 +9,7 @@ categories:
 
 It is a simple program in <strong>Python</strong> which makes use of the <strong>traceroute</strong> utility along with the <strong>GeoIP database</strong> to find out the names of the countries through which a packet is routing.
 <br>
-First of all, download the GeoIP database file from <a href="localhost:4000/GeoIPCountryCSV.zip">here</a>. Extract the csv file from the zip folder and rename the file as <strong>country.csv</strong>. Renaming is necessary as the file, in the code below, is referred by this name.
+First of all, download the GeoIP database file from <a href="http://geolite.maxmind.com/download/geoip/database/GeoIPCountryCSV.zip">here</a>. Extract the csv file from the zip folder and rename the file as <strong>country.csv</strong>. Renaming is necessary as the file, in the code below, is referred by this name.
 <br>
 Now make a file traceroute.py(you can give any name to the file, this is just an example) and copy the following code into it.
 
